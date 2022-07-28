@@ -1,0 +1,15 @@
+@import "../../styles/mixins.pcss";
+
+.lang-switcher {
+
+    --offsetX: 24px;
+    --fontWeight: 700;
+    --fontSize: 15px;
+    --lineHeight: 1.333;
+
+    @mixin reset-select;
+    margin-inline: var(--offsetX);
+    font-weight: var(--fontWeight);
+    font-size: var(--fontSize);
+    line-height: var(--lineHeight);
+}

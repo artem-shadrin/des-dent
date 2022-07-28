@@ -1,0 +1,68 @@
+<%
+const cfg = {...require("./data.json"), ...arguments?.[0]}
+const {
+    extraClasses,
+    extraAttrs
+} = cfg
+%>
+<%
+const classes = `header ${extraClasses.join(" ")}`.trim()
+const attrs = extraAttrs.join(" ")
+const links = [
+    {
+        text: "Главная",
+        href: "#"
+    },
+    {
+        text: "Прайс",
+        href: "#"
+    },
+    {
+        text: "Врачи",
+        href: "#"
+    },
+    {
+        text: "Отзывы",
+        href: "#"
+    },
+    {
+        text: "Наши работы",
+        href: "#"
+    },
+    {
+        text: "Контакты",
+        href: "#"
+    }
+]
+%>
+
+<header
+        class="<%= classes %>"
+        <%- attrs %>
+>
+    <div class="header__contacts">
+        <div class="header__city"></div>
+        <div class="header__street"></div>
+        <div class="header__graphic"></div>
+        <div class="header__social"></div>
+    </div>
+    <div class="header__main">
+        <div class="header__logo"></div>
+        <div class="header__call"></div>
+        <div class="header__phone"></div>
+    </div>
+    <div class="header__nav">
+        <nav class="header-nav">
+            <ul class="header-nav__list">
+                <% links.forEach((item, i)=>{ %>
+                    <li class="header-nav__item">
+                        <a href="<%- item.href %>"
+                           class="header-nav__link <% if (cfg === i) { %> is-active <% } %>">
+                            <%- item.text %>
+                        </a>
+                    </li>
+                <% }) %>
+            </ul>
+        </nav>
+    </div>
+</header>

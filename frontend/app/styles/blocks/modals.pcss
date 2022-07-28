@@ -1,0 +1,27 @@
+@import "../media.pcss";
+
+.modal {
+    display: none;
+    padding: 80px 80px 85px !important;
+    width: calc(100% * 1414 / 1920) !important;
+
+    &__title {
+        font-weight: 700;
+        font-size: 42px;
+        line-height: 52px;
+        margin-bottom: 50px;
+    }
+    &__actions{
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    @media (--desktop-s){
+        padding: 40px 40px 45px !important;
+    }
+}
+
+.carousel__button {
+    top: 6px !important;
+    right: 6px !important;
+    color: var(--c-main) !important;
+}

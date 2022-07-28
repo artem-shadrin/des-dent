@@ -1,0 +1,63 @@
+{
+  "name": "dent",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "cd frontend && webpack-dev-server --mode development",
+    "build": "cd frontend && webpack --mode production",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.7",
+    "@babel/plugin-transform-runtime": "^7.17.0",
+    "@babel/preset-env": "^7.16.11",
+    "autoprefixer": "^10.4.4",
+    "babel-loader": "^8.2.3",
+    "copy-webpack-plugin": "^10.2.4",
+    "css-loader": "^6.6.0",
+    "css-minimizer-webpack-plugin": "^3.4.1",
+    "ejs-compiled-loader": "^3.1.0",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "i": "^0.3.7",
+    "mini-css-extract-plugin": "^2.6.0",
+    "npm": "^8.5.5",
+    "postcss": "^8.4.8",
+    "postcss-custom-media": "^8.0.0",
+    "postcss-easy-import": "^4.0.0",
+    "postcss-for": "^2.1.1",
+    "postcss-loader": "^6.2.1",
+    "postcss-mixins": "^9.0.2",
+    "postcss-nested": "^5.0.6",
+    "postcss-preset-env": "^7.4.2",
+    "style-loader": "^3.3.1",
+    "svg-sprite-loader": "^6.0.11",
+    "svg-transform-loader": "^2.0.13",
+    "svg4everybody": "^2.1.9",
+    "svgo-loader": "^3.0.0",
+    "webpack": "^5.69.1",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.4"
+  },
+  "dependencies": {
+    "@fancyapps/ui": "^4.0.26",
+    "custom-select": "^1.1.15",
+    "imask": "^6.4.2",
+    "reset-css": "^5.0.1",
+    "swiper": "^8.0.7"
+  },
+  "browserslist": [
+    "safari 11",
+    "firefox 52",
+    "edge 16",
+    "chrome 60",
+    "last 2 ios_saf versions",
+    "last 2 and_chr versions",
+    "last 2 samsung versions"
+  ]
+}

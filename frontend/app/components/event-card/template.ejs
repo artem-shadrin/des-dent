@@ -1,0 +1,38 @@
+<%
+const cfg = {...require("./data.json"), ...arguments?.[0]}
+const {
+  extraClasses,
+  extraAttrs,
+  image,
+  isImageBig,
+  date,
+  title,
+  href,
+  timer,
+} = cfg
+%>
+<%
+const additionalClass = !image ?
+  'event-card--no-image' :
+  isImageBig ?
+    'event-card--big-image' :
+    ''
+const classes = `event-card ${extraClasses.join(" ")} ${additionalClass}`.trim()
+const attrs = extraAttrs.join(" ")
+%>
+
+<li
+  class="<%= classes %>"
+  <%- attrs %>
+>
+  <% if (timer){ %>
+    <div class="event-card__timer"></div>
+  <% } %>
+  <% if(image) { %>
+    <div class="event-card__img"><img src="<%- image %>" alt="Картинка события"  loading=lazy></div>
+  <% } %>
+  <div class="event-card__content">
+    <span class="event-card__date"><%- date %></span>
+    <a href="<%- href %>" class="event-card__title"><%- title %></a>
+  </div>
+</li>

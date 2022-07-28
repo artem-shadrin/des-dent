@@ -1,0 +1,165 @@
+@import "../../styles/mixins.pcss";
+
+.event-card {
+    --contentPadding: 30px;
+    --contentBgColor: var(--c-light);
+
+    --timerBgColor: var(--c-main);
+    --timerPaddingX: 30px;
+    --timerPaddingY: 20px;
+    --timerZIndex: 1;
+
+    --timerTextFontWeight: 400;
+    --timerTextFontSize: 13px;
+    --timerTextLineHeight: 1.54;
+    --timerTextTransform: uppercase;
+    --timerTextColor: var(--c-light);
+    --timerTextMarginBottom: 5px;
+
+    --timerDateFontWeight: 700;
+    --timerDateFontSize: 18px;
+    --timerDateLineHeight: 1.56;
+    --timerDateColor: var(--c-light);
+
+    --titleFontWeight: 700;
+    --titleFontSize: 16px;
+    --titleLineHeight: 1.5;
+    --titleColor: var(--c-dark);
+    --hoverTitleColor: var(--c-accent);
+
+
+    --dateFontWeight: 700;
+    --dateFontSize: 16px;
+    --dateLineHeight: 1.5;
+    --dateColor: var(--c-gray);
+    --dateMarginBottom: 24px;
+
+    --gridRow: span 2;
+    --heightCard: 500px;
+    --heightContent: 250px;
+
+
+    --baseTransitionDuration: .2s;
+
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    height: var(--heightCard);
+    grid-row: var(--gridRow);
+
+    &__content {
+        flex-basis: var(--heightContent);
+        flex-grow: 0;
+        flex-shrink: 0;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        background-color: var(--contentBgColor);
+        padding: var(--contentPadding);
+    }
+
+    &__timer {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: var(--timerZIndex);
+
+        background-color: var(--c-main);
+        padding: var(--timerPaddingY) var(--timerPaddingX);
+    }
+
+    &__timer-title {
+        font-weight: var(--timerTextFontWeight);
+        font-size: var(--timerTextFontSize);
+        line-height: var(--timerTextLineHeight);
+        text-transform: var(--timerTextTransform);
+        color: var(--timerTextColor);
+        margin-bottom: var(--timerTextMarginBottom);
+        user-select: none;
+    }
+
+    &__timer-date {
+        font-weight: var(--timerDateFontWeight);
+        font-size: var(--timerDateFontSize);
+        line-height: var(--timerDateLineHeight);
+        color: var(--timerDateColor);
+        user-select: none;
+    }
+
+    &__img {
+        flex: 0 0 var(--heightContent);
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__date {
+        display: inline-block;
+        font-weight: var(--dateFontWeight);
+        font-size: var(--dateFontSize);
+        line-height: var(--dateLineHeight);
+        color: var(--dateColor);
+        margin-bottom: var(--dateMarginBottom);
+        user-select: none;
+    }
+
+    &__title {
+        @mixin reset-link;
+        @mixin transition;
+        font-weight: var(--titleFontWeight);
+        font-size: var(--titleFontSize);
+        line-height: var(--titleLineHeight);
+        color: var(--titleColor);
+
+        &:hover {
+            color: var(--hoverTitleColor)
+        }
+    }
+
+}
+
+.event-card--colored {
+    --contentBgColor: var(--c-main);
+    --titleColor: var(--c-light);
+    --dateColor: var(--c-gray);
+}
+
+.event-card--big-image {
+
+    --titleFontSize: 22px;
+    --titleLineHeight: 1.45;
+    --titleColor: var(--c-light);
+
+    --dateColor: var(--c-light);
+    --contentBgColor: transparent;
+
+    .event-card__content {
+        margin-top: auto;
+    }
+
+    .event-card__img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        transition: filter var(--baseTransitionDuration);
+    }
+
+    &:hover {
+        .event-card__img {
+            filter: brightness(0.5);
+        }
+    }
+}
+
+.event-card--no-image {
+    --gridRow: span 1;
+    --heightCard: 250px;
+}

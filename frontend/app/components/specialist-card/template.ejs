@@ -1,0 +1,19 @@
+<%
+const cfg = { ...require("./data.json"), ...arguments?.[0] }
+const {
+	extraClasses,
+	extraAttrs
+} = cfg
+%>
+
+<%
+const classes = `example ${extraClasses.join(" ")}`.trim()
+const attrs = extraAttrs.join(" ")
+%>
+
+<div
+	class="<%= classes %>"
+	<%- extraAttrs %>
+>
+
+</div>

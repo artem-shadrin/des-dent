@@ -1,0 +1,117 @@
+@import "../mixins.pcss";
+
+.hero {
+    --titleMarginBottom: 40px;
+
+    --descriptionFontWeight: 600;
+    --descriptionFontSize: 16px;
+    --descriptionLineHeight: 1.375;
+    --descriptionColor: var(--c-light);
+    --descriptionMaxWidth: 748px;
+    --descriptionMarginBottom: 40px;
+
+
+    --advBgColor: var(--c-main-2);
+    --advPadding: 42px 110px;
+
+    --advListJustifyContent: space-between;
+    --advListGridColumns: repeat(5, auto);
+    --advListGap: 20px;
+
+    --advItemGap: 20px;
+    --advItemColor: var(--c-light);
+
+    --advValueFontWeight: 600;
+
+    --advTextFontWeight: 600;
+    --advTextFontSize: 15px;
+    --advTextLineHeight: 1.4;
+    --advTextMaxWidth: 210px;
+    position: relative;
+
+    height: 100vh;
+
+    &__img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+
+    &__title {
+        margin-bottom: var(--titleMarginBottom);
+    }
+
+    &__description {
+        font-weight: var(--descriptionFontWeight);
+        font-size: var(--descriptionFontSize);
+        line-height: var(--descriptionLineHeight);
+        color: var(--descriptionColor);
+        max-width: var(--descriptionMaxWidth);
+        margin-bottom: var(--descriptionMarginBottom);
+    }
+
+    &__advantages {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        padding: var(--advPadding);
+        background-color: var(--advBgColor);
+        overflow: auto;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        @media (--desktop-s) {
+            --advPadding: 16px 30px;
+        }
+
+    }
+
+    &__advantages-wrapper {
+        @media (--tablet) {
+            width: max-content;
+        }
+    }
+
+    &__advantages-list {
+        display: flex;
+        gap: var(--advListGap);
+        align-items: center;
+        justify-content: space-between;
+        @media (--tablet) {
+            animation-name: translation;
+            animation-duration: 20s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+    }
+
+    &__advantages-item {
+
+
+        display: flex;
+        gap: var(--advItemGap);
+        align-items: center;
+        justify-content: center;
+        color: var(--advItemColor);
+    }
+
+    &__advantages-value {
+        @mixin fluid-text 64, 32;
+        font-weight: var(--advValueFontWeight);
+    }
+
+    &__advantages-text {
+        display: inline-block;
+        max-width: var(--advTextMaxWidth);
+        font-weight: var(--advTextFontWeight);
+        font-size: var(--advTextFontSize);
+        line-height: var(--advTextLineHeight);
+    }
+
+}
+

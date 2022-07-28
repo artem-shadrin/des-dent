@@ -1,0 +1,31 @@
+@import "../media.pcss";
+
+.events {
+
+    --listMarginBottom: 50px;
+    --gridColumns: 4;
+
+    padding-block: 100px 250px;
+    background: linear-gradient(var(--c-gray-3), var(--c-gray-3)) no-repeat -20vw -40px;
+    @media (--tablet) {
+        --gridColumns: 2;
+    }
+    @media (--mobile) {
+        --gridColumns: 1;
+    }
+
+    &__title {
+        margin-bottom: 50px;
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(var(--gridColumns), 1fr);
+        margin-bottom: var(--listMarginBottom);
+    }
+
+    &__to-section {
+        width: max-content;
+        margin-left: auto;
+    }
+}

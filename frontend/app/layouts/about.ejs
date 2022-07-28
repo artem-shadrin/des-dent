@@ -1,0 +1,20 @@
+<section class="about">
+    <div class="container">
+        <h2 class="about__title title">О клинике</h2>
+        <span class="about__subtitle subtitle"></span>
+        <ul class="about__list">
+            <li class="about__card">
+                <%- require("../components/about-card/template.ejs")() %>
+            </li>
+            <li class="about__card">
+                <%- require("../components/about-card/template.ejs")() %>
+            </li>
+            <li class="about__card">
+                <%- require("../components/about-card/template.ejs")() %>
+            </li>
+        </ul>
+        <div class="about__more">
+            <%- require("../components/button/template.ejs")() %>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,37 @@
+<%
+const params = {...require("./data.json"), ...arguments?.[0]}
+const {
+  extraClasses,
+  extraAttrs,
+  id,
+  name,
+  type,
+  checked,
+  disabled,
+  required,
+  label
+} = params
+%>
+<%
+const classes = `checkbox ${extraClasses.join(" ")}`.trim()
+const attrs = extraAttrs.join(" ")
+%>
+
+<label class="<%= classes %>"
+  <%- attrs %>>
+  <input type="<%= type %>"
+         name="<%= name %>"
+         id="<%- id %>"
+  <% if(disabled) { %>
+         disabled
+    <% } %>
+  <% if(checked) { %>
+         checked
+    <% } %>
+  <% if(required) { %>
+         required
+    <% } %>
+         class="checkbox__input">
+  <span class="checkbox__emulator"></span>
+  <span class="checkbox__label"> <%- label %></span>
+</label>

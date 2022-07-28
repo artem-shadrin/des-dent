@@ -1,0 +1,58 @@
+<%
+const cfg = {...require("./data.json"), ...arguments?.[0]}
+const {
+  extraClasses,
+  extraAttrs,
+  type,
+  href,
+  label,
+  labelIsHidden,
+  icon,
+  iconPosition,
+  disabled
+} = cfg
+%>
+<%
+const additionalClass = (labelIsHidden && icon) ? 'button--icon-only' : '';
+const classes = `button ${extraClasses.join(" ")} ${additionalClass}`.trim()
+const attrs = extraAttrs.join(" ")
+const getIconMarkup = () => {
+  if (icon) {
+    return `
+        <svg class="button__icon i-icon i-${icon}">
+          <use href="#${icon}"></use>
+				</svg>
+      `
+  } else {
+    return ""
+  }
+}
+const getBodyMarkup = () => {
+  return `
+      ${iconPosition === 'left' ? getIconMarkup() : ""}
+			<span class="button__label">${label}</span>
+			${iconPosition === 'right' ? getIconMarkup() : ""}
+    `
+}
+%>
+
+<% if (href) { %>
+  <a
+    class="<%= classes %>"
+    href="<%= href %>"
+    <%- attrs %>
+  >
+    <%- getBodyMarkup() %>
+  </a>
+<% } else { %>
+  <button
+    class="<%= classes %>"
+    type="<%= type %>"
+    <%- attrs %>
+  <% if (disabled) { %>
+    disabled
+    <% } %>
+  >
+    <%- getBodyMarkup() %>
+  </button>
+<% } %>

@@ -1,0 +1,138 @@
+@import "./animations.pcss";
+@import "./media.pcss";
+
+@define-mixin fluid-text $max: 100, $min: 14 {
+    font-size: calc($(min)px + ($max - $min) * ((100vw - 360px) / (1920 - 360)));
+
+    @media (--desktop-above) {
+        font-size: $(max)px;
+    }
+}
+
+@define-mixin transition $prop: var(--baseTransitionDuration, 0.3s) {
+    .dom-is-ready & {
+        transition: $prop;
+    }
+}
+
+@define-mixin hide {
+    opacity: 0;
+    visibility: hidden;
+    backface-visibility: hidden;
+}
+
+@define-mixin show {
+    opacity: 1;
+    visibility: visible;
+}
+
+@define-mixin reset-link {
+    text-decoration: none;
+    color: inherit;
+    border: 0;
+}
+
+@define-mixin reset-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+        position: static;
+        margin: 0;
+        padding: 0;
+
+        &::before,
+        &::after {
+            content: none;
+        }
+    }
+}
+
+@define-mixin reset-select {
+    font-family: inherit;
+    color: var(--c-dark);
+}
+
+@define-mixin reset-button {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    background-color: transparent;
+    border: 0;
+    box-shadow: none;
+    appearance: none;
+}
+
+@define-mixin hide-scrollbar {
+    scrollbar-width: none;
+    overflow: -moz-scrollbars-none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+        width: 0 !important;
+    }
+}
+
+@define-mixin custom-scrollbar $scrollBackgroundColor: var(--c-accent-2), $thumbColor: var(--c-main), $thumbBorderRadius: 0px {
+    html:not(.safari):not(.is-mobile-device) & {
+        scrollbar-color: $thumbColor $scrollBackgroundColor;
+        scrollbar-width: thin;
+
+        &::-webkit-scrollbar {
+            --size: 8px;
+
+            width: var(--size);
+            background-color: $scrollBackgroundColor;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: $thumbColor;
+            background-clip: content-box;
+        }
+
+        &::-webkit-scrollbar-track,
+        &::-webkit-scrollbar-thumb {
+            border-radius: $thumbBorderRadius;
+        }
+    }
+}
+
+@define-mixin visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    overflow: hidden;
+    border: 0 !important;
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+@define-mixin text-overflow {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@define-mixin line-clamp $max: 1 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $max;
+    overflow: hidden;
+}
+
+@define-mixin slider-shadow-fix $offset: 30px {
+    &.swiper {
+        width: calc(100% + $(offset) * 2);
+        margin: calc($(offset) * -1);
+        padding: $(offset);
+    }
+}
+
+@define-mixin add-separator {
+    content: "";
+    height: 41px;
+    border-left: 1px solid var(--c-dark-2);
+    display: block;
+    position: absolute;
+}

@@ -1,0 +1,33 @@
+{
+
+  "points": [
+    {
+      "coords": [55.161383, 61.374787],
+      "options": {
+        "hasBalloon": false,
+        "iconImageHref": "../images/icon-hint.svg",
+        "iconLayout": "default#image",
+        "iconImageSize": [32,37]
+      },
+      "properties": {
+        "hintTitle": "Хорошее место",
+        "hintLocation": "Россия, г. Челябинск"
+      }
+    },
+    {
+      "coords": [54.442455, 61.268237],
+      "options": {
+        "hasBalloon": false,
+        "iconImageHref": "../images/icon-hint.svg",
+        "iconLayout": "default#image",
+        "iconImageSize": [32,37]
+      },
+      "properties": {
+        "hintTitle": "Хорошее место",
+        "hintLocation": "Россия, г. Южноуральск"
+      }
+    }
+  ],
+  "center": [55.161383, 61.374787],
+  "zoom": 18
+}

@@ -1,0 +1,25 @@
+@import "mixins.pcss";
+
+.i-icon {
+    --color: #000000;
+    --size: 1em;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--size);
+    height: var(--size);
+
+    * {
+        @mixin transition;
+        fill: var(--color);
+    }
+}
+
+.i-icon-search {
+    stroke: var(--color);
+
+    *:not(:last-child) {
+        fill: none  ;
+    }
+}

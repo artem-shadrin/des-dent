@@ -1,0 +1,53 @@
+@import "mixins.pcss";
+
+.container {
+  width: 100%;
+  max-width: calc(var(--grid-width) + var(--grid-padding) * 2);
+  margin-inline: auto;
+  padding-inline: var(--grid-padding);
+  position: relative;
+}
+
+.hidden {
+  display: none;
+}
+
+.hidden-mobile {
+  @media (--mobile) {
+    display: none !important;
+  }
+}
+
+.visible-mobile {
+  @media (--mobile-above) {
+    display: none !important;
+  }
+}
+
+.visible-desktop-m {
+  @media (--desktop-m) {
+    display: none !important;
+  }
+}
+
+.visible-desktop {
+  @media (--tablet) {
+    display: none !important;
+  }
+}
+
+.visible-tablet {
+  @media (--tablet-above) {
+    display: none !important;
+  }
+}
+
+.hidden-tablet-xs {
+  @media (--tablet-xs) {
+    display: none !important;
+  }
+}
+
+.visually-hidden {
+  @mixin visually-hidden;
+}

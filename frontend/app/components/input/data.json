@@ -1,0 +1,14 @@
+{
+  "extraClasses": [],
+  "extraAttrs": [],
+  "id": null,
+  "name": "input-name",
+  "label": "Введите значение",
+  "labelIsHidden": false,
+  "value": null,
+  "type": "text",
+  "required": true,
+  "autocomplete": false,
+  "readOnly": false,
+  "mask": null
+}

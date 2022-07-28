@@ -1,0 +1,41 @@
+<%
+const links = [
+  {
+    text: "О компании",
+    href: "#"
+  },
+  {
+    text: "Продукция",
+    href: "#"
+  },
+  {
+    text: "Исследования",
+    href: "#"
+  },
+  {
+    text: "События",
+    href: "#"
+  },
+  {
+    text: "Контакты",
+    href: "#"
+  }
+]
+%>
+
+</main>
+<%- require("../components/footer/template.ejs")() %>
+<%- require("./modals.ejs")() %>
+<div class="mobile-menu" data-js-mobile-menu>
+  <ul class="mobile-menu__list">
+    <% links.forEach(link => { %>
+      <li class="mobile-menu__item">
+        <a href="/" class="mobile-menu__link">
+          <%- link.text %>
+        </a>
+      </li>
+    <% }) %>
+  </ul>
+</div>
+</body>
+</html>

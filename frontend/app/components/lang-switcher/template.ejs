@@ -1,0 +1,24 @@
+<%
+const cfg = {...require("./data.json"), ...arguments?.[0]}
+const {
+  extraClasses,
+  extraAttrs,
+  lang
+} = cfg
+%>
+<%
+const classes = `lang-switcher ${extraClasses.join(" ")}`.trim()
+const attrs = extraAttrs.join(" ")
+%>
+
+<select
+  class="<%= classes %>"
+  <%- attrs %>
+>
+  <option class="lang-switcher__item">
+    RU
+  </option>
+  <option class="lang-switcher__item">
+    ENG
+  </option>
+</select>

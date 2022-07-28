@@ -1,0 +1,10 @@
+<%
+const cfg = { ...require("./data.json"), ...arguments?.[0] }
+%>
+
+<div
+	class="map"
+  data-js-map='<%- JSON.stringify(cfg)%>'
+>
+
+</div>

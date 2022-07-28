@@ -1,0 +1,29 @@
+<%
+const cfg = {...require("./data.json"), ...arguments?.[0]}
+const {
+  extraClasses,
+  extraAttrs
+} = cfg
+%>
+<%
+const classes = `footer ${extraClasses.join(" ")}`.trim()
+const attrs = extraAttrs.join(" ")
+%>
+
+<footer class="<%= classes %>" <%- extraAttrs %>>
+  <div class="container">
+    <div class="footer__col">
+      <div class="footer__logo"></div>
+      <div class="footer__city"></div>
+      <div class="footer__street"></div>
+      <div class="footer__graphic"></div>
+    </div>
+    <div class="footer__col">
+      <nav class="footer__nav"></nav>
+    </div>
+    <div class="footer__col">
+      <div class="footer__social"></div>
+      <div class="footer__contacts"></div>
+    </div>
+  </div>
+</footer>

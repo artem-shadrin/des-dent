@@ -1,0 +1,49 @@
+@import "../../styles/mixins.pcss";
+
+.map {
+    height: 100%;
+    background-color: var(--c-gray);
+}
+
+.map-hint {
+    --hintbgColor: var(--c-light);
+    --hintPadding: 20px;
+    --hintBorderRadius: var(--border-radius);
+    --hintShadow: var(--shadow);
+    --hintWidth: max-content;
+
+    --titleFontWeight: 700;
+    --titleFontSize: 14px;
+    --titleLineHeight: 1.35;
+    --titleColor: var(--c-dark);
+
+    --locationFontWeight: 400;
+    --locationFontSize: 13px;
+    --locationLineHeight: 1.35;
+    --locationColor: var(--c-gray);
+
+    display: flex;
+    flex-direction: column;
+
+    width: var(--hintWidth);
+    background-color: var(--hintbgColor);
+    padding: var(--hintPadding);
+    border-radius: var(--hintBorderRadius);
+    box-shadow: var(--hintShadow);
+
+    &__title {
+        font-weight: var(--titleFontWeight);
+        font-size: var(--titleFontSize);
+        line-height: var(--titleLineHeight);
+        color: var(--titleColor);
+    }
+
+    &__location {
+        font-weight: var(--locationFontWeight);
+        font-size: var(--locationFontSize);
+        line-height: var(--locationLineHeight);
+        color: var(--locationColor);
+
+
+    }
+}
