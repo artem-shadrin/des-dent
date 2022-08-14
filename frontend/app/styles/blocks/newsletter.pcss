@@ -3,28 +3,25 @@
 .newsletter {
     --contentBgColor: var(--c-light);
     --placeholderColor: var(--c-main);
-    --contentPaddingX: 105px;
-    --contentPaddingY: 85px;
+    --contentPaddingX: 60px;
+    --contentPaddingY: 45px;
     --titleMarginBottom: 15px;
-
     --gridColumns: repeat(2, 1fr);
     --gridRows: repeat(3, auto);
     --formGridColumn: span 2;
     --formMarginTop: 36px;
-
     --legendFontWeight: 400;
     --legendFontSize: 16px;
     --legendLineHeight: 1.3;
     --legendTextAlign: right;
     --legendColor: var(--c-dark);
-
     --formMarginBottom: 30px;
 
-
+    padding: 0;
     &__content {
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 100%;
+        width: 95%;
         position: absolute;
         display: grid;
         grid-template-columns: var(--gridColumns);

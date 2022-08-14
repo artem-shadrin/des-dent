@@ -1,0 +1,22 @@
+<section class="section geography">
+
+    <div class="geography__information">
+        <h2 class="h2 geography__title">Где мы находимся</h2>
+        <h3 class="geography__subtitle"><span class="geography__numb">Lorem.</span> <br> Lorem ipsum dolor sit amet.
+        </h3>
+        <div class="geography__text">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda consequuntur dolores ea ex explicabo
+            facere illo magnam minus molestias veniam?
+        </div>
+        <div class="geography__about-company">
+            <%- require("../components/button/template.ejs")({
+                icon: "icon-arrow",
+                label: "Записаться на прием"
+            }) %>
+        </div>
+    </div>
+    <div class="geography__map">
+        <%- require("../components/map/template.ejs")() %>
+    </div>
+
+</section>

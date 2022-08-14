@@ -1,19 +1,28 @@
 <%
-const cfg = { ...require("./data.json"), ...arguments?.[0] }
+const cfg = {...require("./data.json"), ...arguments?.[0]}
 const {
-	extraClasses,
-	extraAttrs
+    extraClasses,
+    extraAttrs,
+    text,
+    title,
+    img
 } = cfg
 %>
-
 <%
-const classes = `example ${extraClasses.join(" ")}`.trim()
+const classes = `about-card ${extraClasses.join(" ")}`.trim()
 const attrs = extraAttrs.join(" ")
 %>
 
 <div
-	class="<%= classes %>"
-	<%- extraAttrs %>
+        class="<%= classes %>"
+        <%- attrs %>
 >
+    <div class="about-card__content">
+        <h4 class="about-card__title"><%- title %></h4>
+        <div class="about-card__text"><%- text %></div>
+    </div>
+    <div class="about-card__media">
+        <img src="<%= img %>" alt="<%= title %>" loading=lazy>
+    </div>
 
 </div>

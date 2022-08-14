@@ -1,20 +1,42 @@
-<section class="about">
+<section class="section  about">
     <div class="container">
         <h2 class="about__title title">О клинике</h2>
         <span class="about__subtitle subtitle"></span>
         <ul class="about__list">
             <li class="about__card">
-                <%- require("../components/about-card/template.ejs")() %>
+                <%- require("../components/about-card/template.ejs")(
+                        {
+                            text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam corporis dolorum inventore, iste minima, nesciunt odio quibusdam quisquam quos sed tempore veritatis voluptate voluptatem! A esse id iste omnis voluptas.",
+                            title: "Lorem ipsum dolor sit",
+                            img: "./images/main/slide_0.jpg"
+                        }
+                ) %>
             </li>
             <li class="about__card">
-                <%- require("../components/about-card/template.ejs")() %>
+                <%- require("../components/about-card/template.ejs")(
+                        {
+                            extraClasses: ["about-card--reverse"],
+                            text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam corporis dolorum inventore, iste minima, nesciunt odio quibusdam quisquam quos sed tempore veritatis voluptate voluptatem! A esse id iste omnis voluptas.",
+                            title: "Lorem ipsum dolor sit",
+                            img: "./images/main/slide_0.jpg"
+                        }) %>
             </li>
             <li class="about__card">
-                <%- require("../components/about-card/template.ejs")() %>
+                <%- require("../components/about-card/template.ejs")(
+                        {
+                            text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam corporis dolorum inventore, iste minima, nesciunt odio quibusdam quisquam quos sed tempore veritatis voluptate voluptatem! A esse id iste omnis voluptas.",
+                            title: "Lorem ipsum dolor sit",
+                            img: "./images/main/slide_0.jpg"
+                        }) %>
             </li>
         </ul>
         <div class="about__more">
-            <%- require("../components/button/template.ejs")() %>
+            <%- require("../components/button/template.ejs")({
+                extraClasses: ["button--transparent"],
+                label: "Посмотреть наши работы",
+                icon: "icon-arrow",
+                iconPosition: "right"
+            }) %>
         </div>
     </div>
 </section>

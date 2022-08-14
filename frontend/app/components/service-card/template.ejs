@@ -1,19 +1,35 @@
 <%
-const cfg = { ...require("./data.json"), ...arguments?.[0] }
+const cfg = {...require("./data.json"), ...arguments?.[0]};
 const {
-	extraClasses,
-	extraAttrs
-} = cfg
+    extraClasses,
+    extraAttrs,
+    icon,
+    caption,
+    description
+} = cfg;
 %>
-
 <%
-const classes = `example ${extraClasses.join(" ")}`.trim()
-const attrs = extraAttrs.join(" ")
+const classes = `service-card ${extraClasses.join(" ")}`.trim();
+const attrs = extraAttrs.join(" ");
 %>
 
 <div
-	class="<%= classes %>"
-	<%- extraAttrs %>
+        class="<%= classes; %>"
+        <%- attrs; %>
 >
+    <div class="service-card__icon">
+        <svg class=" i-icon i-<%- icon %>">
+            <use href="#<%- icon %>"></use>
+        </svg>
+    </div>
+    <div class="service-card__caption"><%- caption %></div>
+    <div class="service-card__description"> <%- description %></div>
+    <div class="service-card__btn-call">
+        <%- require("../button/template.ejs")({
+            extraClasses: ["button--transparent"],
+            extraAttrs: ["modal-btn-open=``"],
+            label: "Заказать звонок"
+        }) %>
+    </div>
 
 </div>

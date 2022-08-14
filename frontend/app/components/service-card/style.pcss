@@ -1,5 +1,39 @@
 @import "../../styles/mixins.pcss";
 
-.example {
+.service-card {
+    box-shadow: var(--shadow);
+    aspect-ratio: 10/12;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: var(--c-light);
+    transition: transform .2s;
 
+    &__icon {
+        width: max-content;
+        margin: 0 auto;
+
+        .i-icon {
+            --size: 5rem;
+        }
+    }
+
+    &__caption {
+    }
+
+    &__description {
+        font-size: 0.8rem;
+    }
+
+    &__btn-call {
+        .button {
+            --fontSize: 0.8rem;
+        }
+    }
+
+    &:hover {
+        transform: translateY(-2px) scale(1.01);
+        box-shadow: var(--shadow-2);
+    }
 }

@@ -1,0 +1,31 @@
+.service {
+    padding-bottom: 200px;
+    background-color: var(--c-main);
+
+    &__title {
+        color: var(--c-light);
+    }
+
+    &__subtitle {
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+        gap: 20px;
+        margin-bottom: 50px;
+    }
+
+    &__item {
+    }
+
+    &__more {
+        .button {
+            --textColor: var(--c-light-2);
+            --iconColor: var(--c-light-2);
+            --hoverTextColor: var(--c-accent);
+            --hoverIconColor: var(--c-accent);
+
+        }
+    }
+}

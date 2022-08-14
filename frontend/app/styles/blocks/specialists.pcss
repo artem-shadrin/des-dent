@@ -1,0 +1,24 @@
+.specialists {
+    padding-block: 20px;
+    background-color: var(--c-main);
+
+    &__title{
+        color: var(--c-light);
+    }
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 40px;
+        margin-bottom: 50px;
+    }
+
+    &__more {
+        .button {
+            --textColor: var(--c-light-2);
+            --iconColor: var(--c-light-2);
+            --hoverTextColor: var(--c-accent);
+            --hoverIconColor: var(--c-accent);
+
+        }
+    }
+}

@@ -1,5 +1,37 @@
 @import "../../styles/mixins.pcss";
 
-.example {
+.about-card {
+    display: flex;
+    padding: 20px;
+    background-color: var(--c-main);
+    color: var(--c-light);
+    box-shadow: var(--shadow);
+    gap: 20px;
 
+    &__content {
+    }
+
+    &__title {
+        font-size: 1.15rem;
+        font-weight: 500;
+    }
+
+    &__text {
+        font-size: 0.9rem;
+
+    }
+
+    &__media {
+        flex: 0 0 30%;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &--reverse {
+        flex-direction: row-reverse;
+    }
 }

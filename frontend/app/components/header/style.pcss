@@ -1,52 +1,63 @@
 @import "../../styles/mixins.pcss";
 
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background-color: var(--c-overlay);
+
+}
+
 .header {
-    &__contacts {
-
-    }
-
-    &__city {
-
-    }
-
-    &__street {
-
-    }
-
-    &__graphic {
-
-    }
-
-    &__social {
-
-    }
-
-    &__main {
-    }
+    padding: 20px;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
 
     &__logo {
+        flex: 0 0 180px;
 
+        img {
+            width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
     }
 
-    &__call {
-
+    &__nav {
+        flex: 1 1 auto;
+        max-width: 50%;
     }
 
     &__phone {
 
     }
-
-    &__nav {
-
-    }
 }
 
+.phone {
+    &__link {
+        @mixin reset-link;
+        color: var(--c-light);
+        transition: var(--transition);
+
+        &:hover {
+            color: var(--c-accent);
+        }
+    }
+
+    &__btn-call {
+    }
+}
 
 .header-nav {
 
     &__list {
-
-
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
     &__item {
@@ -55,7 +66,51 @@
     }
 
     &__link {
+        white-space: nowrap;
+        @mixin reset-link;
+        padding: 10px;
+        text-transform: uppercase;
+        display: inline-block;
+        position: relative;
+        color: var(--c-light);
+        font-weight: 500;
+        transition: var(--transition);
+        font-size: 1.3rem;
 
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--c-accent);
+            transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        &.is-active:not(:hover) {
+            color: var(--c-accent-2);
+
+            &::before {
+                left: 0;
+                right: auto;
+                width: 100%;
+                background-color: var(--c-accent-2);
+
+            }
+        }
+
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                color: var(--c-accent);
+
+                &::before {
+                    left: 0;
+                    right: auto;
+                    width: 100%;
+                }
+            }
+        }
     }
 }
 

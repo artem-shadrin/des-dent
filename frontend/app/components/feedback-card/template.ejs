@@ -1,19 +1,33 @@
 <%
-const cfg = { ...require("./data.json"), ...arguments?.[0] }
+const cfg = {...require("./data.json"), ...arguments?.[0]}
 const {
-	extraClasses,
-	extraAttrs
+    extraClasses,
+    extraAttrs,
+    author,
+    text,
+    date,
+    img
 } = cfg
 %>
-
 <%
-const classes = `example ${extraClasses.join(" ")}`.trim()
+const classes = `feedback-card ${extraClasses.join(" ")}`.trim()
 const attrs = extraAttrs.join(" ")
 %>
 
 <div
-	class="<%= classes %>"
-	<%- extraAttrs %>
+        class="<%= classes %>"
+        <%- extraAttrs %>
 >
-
+    <figure class="snip1197">
+        <figcaption>
+            <blockquote>Sometimes I think the surest sign that intelligent life exists elsewhere in the universe is that
+                none of it has tried to contact us.
+            </blockquote>
+            <div class="arrow"></div>
+        </figcaption>
+        <img src="<%- img %>" alt="sq-sample10" class="swiper-lazy" loading="lazy"/>
+        <div class="author">
+            <h5>Pelican Steve <span>- LittleSnippets</span></h5>
+        </div>
+    </figure>
 </div>

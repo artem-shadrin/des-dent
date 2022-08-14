@@ -1,68 +1,64 @@
 <%
 const cfg = {...require("./data.json"), ...arguments?.[0]}
 const {
-    extraClasses,
-    extraAttrs
+    activeElement
 } = cfg
 %>
 <%
-const classes = `header ${extraClasses.join(" ")}`.trim()
-const attrs = extraAttrs.join(" ")
+const classes = `header`.trim()
 const links = [
     {
         text: "Главная",
-        href: "#"
+        href: "./index.html"
     },
     {
         text: "Прайс",
-        href: "#"
+        href: "./price.html"
     },
     {
         text: "Врачи",
-        href: "#"
+        href: "./specialists.html"
     },
     {
         text: "Отзывы",
-        href: "#"
+        href: "./feedback.html"
     },
     {
         text: "Наши работы",
-        href: "#"
-    },
-    {
-        text: "Контакты",
-        href: "#"
+        href: "./works.html"
     }
 ]
 %>
 
-<header
-        class="<%= classes %>"
-        <%- attrs %>
->
-    <div class="header__contacts">
-        <div class="header__city"></div>
-        <div class="header__street"></div>
-        <div class="header__graphic"></div>
-        <div class="header__social"></div>
+<header>
+    <div class="container">
+        <div class="<%= classes %>">
+            <div class="header__logo">
+                <img src="./images/logo.svg" alt="" class="logo">
+            </div>
+            <div class="header__nav">
+                <nav class="header-nav">
+                    <ul class="header-nav__list">
+                        <% links.forEach((item, i)=>{ %>
+                            <li class="header-nav__item">
+                                <a href="<%- item.href %>"
+                                   class="header-nav__link <% if (activeElement === i) { %> is-active <% } %>">
+                                    <%-item.text%>
+                                </a>
+                            </li>
+                        <% }) %>
+                    </ul>
+                </nav>
+            </div>
+            <div class="header__phone">
+                <div class="phone">
+                    <a href="tel:+78888888888" class="phone__link">+78888888888</a>
+                    <%- require("../button/template.ejs")({
+                        label: "Заказать звонок"
+                    }) %>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="header__main">
-        <div class="header__logo"></div>
-        <div class="header__call"></div>
-        <div class="header__phone"></div>
-    </div>
-    <div class="header__nav">
-        <nav class="header-nav">
-            <ul class="header-nav__list">
-                <% links.forEach((item, i)=>{ %>
-                    <li class="header-nav__item">
-                        <a href="<%- item.href %>"
-                           class="header-nav__link <% if (cfg === i) { %> is-active <% } %>">
-                            <%- item.text %>
-                        </a>
-                    </li>
-                <% }) %>
-            </ul>
-        </nav>
-    </div>
+
 </header>
