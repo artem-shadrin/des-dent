@@ -9,8 +9,7 @@
     --counterFontWeight: 800;
     --counterLineHeight: 80%;
     --counterNextOffset: -40px;
-
-    counter-set: slider;
+    --swiper-navigation-size: 100px;
 
     height: var(--sliderHeight);
 
@@ -49,32 +48,7 @@
             filter: brightness(.5);
         }
 
-        &::before {
-            content: counter(slider, decimal-leading-zero);
-            counter-increment: slider;
-            color: transparent;
-            font-weight: var(--counterFontWeight);
-            @mixin fluid-text 180, 100;
-            line-height: var(--counterLineHeight);
-            -webkit-text-stroke: 2px var(--c-light);
-            -webkit-text-fill-color: transparent;
-            position: absolute;
-            left: 0;
-            transform: translate(-30%, 0);
-            @mixin transition .8s;
-            @media (--mobile) {
-                top: 120px;
-            }
-        }
-    }
 
-    .swiper-slide-active + .swiper-slide {
-        &::before {
-
-            transform: translate(-100%, 0);
-            left: var(--counterNextOffset);
-
-        }
     }
 
     &__navigation {
@@ -130,3 +104,11 @@
     }
 
 }
+
+.slider-about {
+    img {
+        width: 100%;
+        object-fit: contain;
+    }
+}
+

@@ -101,7 +101,6 @@
         --disabledTextColor: var(--c-dark);
         --disabledBgColor: var(--c-gray);
         --disabledIconColor: var(--c-dark);
-
     }
 
     &--icon-only {
@@ -111,6 +110,26 @@
 
         .button__icon {
             --fillSvg: none;
+        }
+    }
+
+    &--primary {
+        --textColor: var(--c-light);
+        --bgColor: transparent;
+        --iconColor: var(--c-light);
+        --hoverTextColor: var(--c-accent);
+        --hoverBgColor: transparent;
+        --hoverIconColor: var(--c-accent);
+        --focusTextColor: var(--c-accent);
+        --focusBgColor: transparent;
+        --focusIconColor: var(--c-accent);
+        --disabledTextColor: var(--c-dark);
+        --disabledBgColor: var(--c-gray);
+        --disabledIconColor: var(--c-dark);
+        border: 2px solid var(--c-light);
+
+        &:hover {
+            border-color: var(--c-accent);
         }
     }
 }

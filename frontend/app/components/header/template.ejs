@@ -30,11 +30,36 @@ const links = [
 ]
 %>
 
-<header>
-    <div class="container">
-        <div class="<%= classes %>">
-            <div class="header__logo">
-                <img src="./images/logo.svg" alt="" class="logo">
+<header class="<%= classes %>">
+    <div class="header__top">
+        <div class="container">
+            <span class="header__city">
+                <svg class="header__icon i-icon i-icon-phone">
+                    <use href="#icon-city"></use>
+                </svg>
+                г.Челябинск
+            </span>
+            <span class="header__street">
+                <svg class="header__icon i-icon i-icon-phone">
+                    <use href="#icon-street"></use>
+                </svg>
+                ул. Ленина д.1 пом.1
+            </span>
+            <span class="header__timing">
+                <svg class="header__icon i-icon i-icon-phone">
+                    <use href="#icon-timing"></use>
+                </svg>
+                Пн-Сб с 9:00 до 21:00, Вс с 10:00 до 16:00
+            </span>
+        </div>
+    </div>
+    <div class="header__bottom">
+        <div class="container">
+            <div class="logo">
+                <div class="logo__img">
+                    <img src="./images/logo.svg" alt="">
+                </div>
+                <span class="logo__text">Дизайн дент<br>Спасибо за доверие</span>
             </div>
             <div class="header__nav">
                 <nav class="header-nav">
@@ -43,7 +68,7 @@ const links = [
                             <li class="header-nav__item">
                                 <a href="<%- item.href %>"
                                    class="header-nav__link <% if (activeElement === i) { %> is-active <% } %>">
-                                    <%-item.text%>
+                                    <%- item.text %>
                                 </a>
                             </li>
                         <% }) %>
@@ -52,13 +77,26 @@ const links = [
             </div>
             <div class="header__phone">
                 <div class="phone">
-                    <a href="tel:+78888888888" class="phone__link">+78888888888</a>
+                    <a href="tel:+78888888888" class="phone__link">
+                        <svg class="phone__icon i-icon i-icon-phone">
+                            <use href="#icon-phone"></use>
+                        </svg>
+                        +78888888888</a>
                     <%- require("../button/template.ejs")({
+                        extraAttrs: [`data-js-modal-open-button = '{"src": "#modal-feedback"}'`],
+                        extraClasses: ["button--primary"],
                         label: "Заказать звонок"
                     }) %>
                 </div>
             </div>
+            <div class="header__btn-menu">
+                <%- require("../button/template.ejs")({
+                    extraClasses: ["button--transparent"],
+                    extraAttrs: ["data-js-burger-button=``"],
+                    icon: "icon-burger-menu",
+                    labelIsHidden: true
+                }) %>
+            </div>
         </div>
     </div>
-
 </header>

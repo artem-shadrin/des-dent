@@ -22,12 +22,10 @@ import "./components/share";
 import "./components/map";
 
 
-
 import "./components/about-card";
 import "./components/service-card";
 import "./components/feedback-card";
 import "./components/specialist-card";
-
 
 
 import Modals from "../app/js/modals";
@@ -39,20 +37,19 @@ import Masks from "./js/forms/mask";
 //Load modules
 
 window.App = {
-    debug: !!window.location.port,
+  debug: !!window.location.port,
 };
 
 window.svg4everybody = svg4everybody;
 
 document.addEventListener("DOMContentLoaded", () => {
-    new SvgUse();
-    document.body.classList.add("dom-is-ready");
-    window.App.Modals = new Modals();
-    window.App.Sliders = new SlidersCollection();
-    window.App.Forms = new Forms();
-    window.App.Masks = new Masks();
-    window.App.MapCollection = new MapCollection();
-    // App.EventTimerCollection = new EventTimerCollection();
-    // App.BurgerButton = new BurgerButton();
-    // App.MobileMenu = new MobileMenu();
+  new SvgUse();
+  document.body.classList.add("dom-is-ready");
+  window.App.Modals = new Modals();
+  window.App.Sliders = new SlidersCollection();
+  window.App.Forms = new Forms();
+  window.App.Masks = new Masks();
+  window.App.MapCollection = new MapCollection();
+  window.App.BurgerButton = new BurgerButton();
+  window.App.MobileMenu = new MobileMenu();
 });

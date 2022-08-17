@@ -1,29 +1,59 @@
 @import "../../styles/mixins.pcss";
 
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 100;
-    background-color: var(--c-overlay);
-
-}
 
 .header {
-    padding: 20px;
-    display: flex;
-    gap: 10px;
-    justify-content: space-between;
-    align-items: center;
+    background-color: var(--c-overlay);
 
-    &__logo {
-        flex: 0 0 180px;
+    &__top {
+        background-color: var(--c-gray-3);
 
-        img {
-            width: 100%;
-            max-height: 100%;
-            object-fit: contain;
+        .container {
+            padding: 10px 0;
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+            align-items: center;
+        }
+    }
+
+    &__bottom {
+        .container {
+            padding: 10px 0;
+            display: flex;
+            gap: 10px;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+
+    &__city {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .i-icon {
+            --color: var(--c-main);
+        }
+    }
+
+    &__street {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .i-icon {
+            --color: var(--c-main);
+        }
+    }
+
+    &__timing {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .i-icon {
+            --color: var(--c-main);
         }
     }
 
@@ -35,13 +65,80 @@ header {
     &__phone {
 
     }
+
+    &__btn-menu {
+        display: none;
+    }
+
+    @media (--tablet) {
+        &__logo {
+            flex-basis: 120px;
+        }
+
+        &__nav {
+            display: none;
+        }
+
+        &__btn-menu {
+            display: block;
+        }
+    }
+    @media (--mobile) {
+        &__phone {
+            display: none;
+        }
+    }
+}
+
+.logo {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-start;
+    flex: 0 0 320px;
+
+    &__img {
+        flex: 0 0 90px;
+        height: min-content;
+        display: flex;
+
+        img {
+            width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &__text {
+        color: var(--c-accent);
+        font-weight: 700;
+        display: inline-block;
+        width: -moz-max-content;
+        width: max-content;
+        line-height: 1.3;
+        font-size: 1.1rem;
+        text-transform: uppercase;
+    }
 }
 
 .phone {
+
+    display: flex;
+    align-items: center;
+
+    &__icon {
+        --color: var(--c-light);
+        margin-right: 5px;
+    }
+
     &__link {
         @mixin reset-link;
         color: var(--c-light);
         transition: var(--transition);
+        display: flex;
+        font-size: 1.2rem;
+        align-items: center;
+        margin-right: 20px;
 
         &:hover {
             color: var(--c-accent);
@@ -56,7 +153,7 @@ header {
 
     &__list {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-evenly;
         align-items: center;
     }
 
@@ -68,14 +165,14 @@ header {
     &__link {
         white-space: nowrap;
         @mixin reset-link;
-        padding: 10px;
+        padding: 5px;
         text-transform: uppercase;
         display: inline-block;
         position: relative;
         color: var(--c-light);
         font-weight: 500;
         transition: var(--transition);
-        font-size: 1.3rem;
+        font-size: 1.2rem;
 
         &::before {
             content: '';
@@ -130,16 +227,14 @@ header {
 }
 
 .mobile-menu {
-    position: absolute;
-    background-color: red;
-    left: 0;
-    top: 0;
+    background-color: var(--c-main);
     width: 100%;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 20;
+    z-index: 100;
+    color: var(--c-light);
 
     &__item {
         font-size: 32px;

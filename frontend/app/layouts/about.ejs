@@ -1,42 +1,40 @@
 <section class="section  about">
     <div class="container">
-        <h2 class="about__title title">О клинике</h2>
-        <span class="about__subtitle subtitle"></span>
-        <ul class="about__list">
-            <li class="about__card">
-                <%- require("../components/about-card/template.ejs")(
-                        {
-                            text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam corporis dolorum inventore, iste minima, nesciunt odio quibusdam quisquam quos sed tempore veritatis voluptate voluptatem! A esse id iste omnis voluptas.",
-                            title: "Lorem ipsum dolor sit",
-                            img: "./images/main/slide_0.jpg"
-                        }
-                ) %>
-            </li>
-            <li class="about__card">
-                <%- require("../components/about-card/template.ejs")(
-                        {
-                            extraClasses: ["about-card--reverse"],
-                            text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam corporis dolorum inventore, iste minima, nesciunt odio quibusdam quisquam quos sed tempore veritatis voluptate voluptatem! A esse id iste omnis voluptas.",
-                            title: "Lorem ipsum dolor sit",
-                            img: "./images/main/slide_0.jpg"
-                        }) %>
-            </li>
-            <li class="about__card">
-                <%- require("../components/about-card/template.ejs")(
-                        {
-                            text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam corporis dolorum inventore, iste minima, nesciunt odio quibusdam quisquam quos sed tempore veritatis voluptate voluptatem! A esse id iste omnis voluptas.",
-                            title: "Lorem ipsum dolor sit",
-                            img: "./images/main/slide_0.jpg"
-                        }) %>
-            </li>
-        </ul>
-        <div class="about__more">
-            <%- require("../components/button/template.ejs")({
-                extraClasses: ["button--transparent"],
-                label: "Посмотреть наши работы",
-                icon: "icon-arrow",
-                iconPosition: "right"
-            }) %>
+        <div class="about__content">
+            <h2 class="about__title title">Почему выбирают нас?</h2>
+            <span class="about__subtitle subtitle"></span>
+            <div class="about__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aut dicta dolore
+                doloribus esse illum in libero modi, nihil praesentium quia quo quod, reiciendis rem sequi veniam
+                veritatis
+                voluptatem voluptates. Asperiores, cumque dignissimos eaque illum pariatur quo vero voluptate. At beatae
+                culpa ducimus iste optio perspiciatis temporibus velit? Beatae blanditiis consequuntur culpa cupiditate,
+                expedita, explicabo illo nobis, odio pariatur quas quo quos ratione sint. Accusamus aliquid cum
+                dignissimos
+                doloribus, est, hic ipsum minima numquam praesentium quisquam repellendus reprehenderit temporibus,
+                voluptatem.
+            </div>
         </div>
+        <div class="about__slider">
+            <span class="about__slider-title">Сертификаты</span>
+<!--            <div class="swiper " id="slider-about">-->
+<!--                <div class="swiper-wrapper">-->
+<!--                    <div class="swiper-slide">-->
+<!--                        <img src="./images/main/slide_0.jpg" alt="" loading=lazy-->
+<!--                             data-js-modal-open="{'src': '#modal-about', 'img': './images/main/slide_0.jpg'}">-->
+<!--                    </div>-->
+<!--                    <div class="swiper-slide">-->
+<!--                        <img src="./images/main/slide_0.jpg" alt="" loading=lazy-->
+<!--                             data-js-modal-open="{'src': '#modal-about', 'img': './images/main/slide_0.jpg'}">-->
+<!--                    </div>-->
+<!--                    <div class="swiper-slide">-->
+<!--                        <img src="./images/main/slide_0.jpg" alt="" loading=lazy-->
+<!--                             data-js-modal-open="{'src': '#modal-about', 'img': './images/main/slide_0.jpg'}">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                </div>-->
+            </div>
+
+        </div>
+
     </div>
 </section>

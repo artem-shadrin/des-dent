@@ -27,7 +27,7 @@ const attrs = extraAttrs.join(" ");
     <div class="service-card__btn-call">
         <%- require("../button/template.ejs")({
             extraClasses: ["button--transparent"],
-            extraAttrs: ["modal-btn-open=``"],
+            extraAttrs: [`data-js-modal-open-button = '{"src": "#modal-feedback"}'`],
             label: "Заказать звонок"
         }) %>
     </div>

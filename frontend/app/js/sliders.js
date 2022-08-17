@@ -29,9 +29,9 @@ export default class SlidersCollection extends Collection {
       options: {
         slidesPerView: 1,
         navigation: {
-          nextEl: ".slider-hero-next",
-          prevEl: ".slider-hero-prev",
-        }
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
       }
     },
     {
@@ -52,7 +52,17 @@ export default class SlidersCollection extends Collection {
         },
       }
     },
-
+    {
+      selector: "#slider-about",
+      options: {
+        direction: "vertical",
+        effect: "fade",
+        fadeEffect: {
+          crossFade: true
+        },
+        slidesPerView: 1,
+      }
+    },
   ];
 
   constructor() {

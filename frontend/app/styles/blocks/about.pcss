@@ -1,4 +1,22 @@
 .about {
+
+    .container {
+        display: flex;
+        gap: 10px;
+    }
+
+    &__content {
+        flex: 0 0 70%;
+    }
+
+    &__slider {
+        flex: 0 0 30%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+    }
+
     &__title {
     }
 
@@ -15,5 +33,9 @@
 
     &__more {
         margin-top: 50px;
+        @media (--tablet) {
+            width: max-content;
+            margin-inline: auto;
+        }
     }
 }
