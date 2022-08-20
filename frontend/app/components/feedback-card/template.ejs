@@ -1,5 +1,5 @@
 <%
-const cfg = {...require("./data.json"), ...arguments?.[0]}
+const cfg = {...require("./data.json"), ...arguments?.[0]};
 const {
     extraClasses,
     extraAttrs,
@@ -7,27 +7,31 @@ const {
     text,
     date,
     img
-} = cfg
+} = cfg;
 %>
 <%
-const classes = `feedback-card ${extraClasses.join(" ")}`.trim()
-const attrs = extraAttrs.join(" ")
+const classes = `feedback-card ${extraClasses.join(" ")}`.trim();
+const attrs = extraAttrs.join(" ");
 %>
 
 <div
-        class="<%= classes %>"
-        <%- extraAttrs %>
+        class="<%= classes ;%>"
+        <%- extraAttrs; %>
 >
     <figure class="snip1197">
         <figcaption>
-            <blockquote>Sometimes I think the surest sign that intelligent life exists elsewhere in the universe is that
-                none of it has tried to contact us.
+            <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad alias aliquam assumenda
+                at atque beatae consequatur consequuntur culpa cum dolores eaque excepturi explicabo facilis fuga illo
+                ipsum laboriosam nostrum nulla obcaecati officia optio pariatur porro quam quasi, quidem quo repellat
+                sequi similique soluta ut velit vero vitae! Ad animi at culpa cum cumque dolor dolorem doloribus
+                explicabo facilis illum incidunt labore maxime minima necessitatibus, nihil nobis odit, quam qui
+                quisquam quo rem repellat repellendus saepe soluta tempora vitae voluptatem.
             </blockquote>
             <div class="arrow"></div>
         </figcaption>
-        <img src="<%- img %>" alt="sq-sample10" class="swiper-lazy" loading="lazy"/>
+        <img src="<%- img; %>" alt="sq-sample10" class="swiper-lazy" loading="lazy"/>
         <div class="author">
-            <h5>Pelican Steve <span>- LittleSnippets</span></h5>
+            <h5>Иванов Иван Иванович <span>- 17 июня 2020</span></h5>
         </div>
     </figure>
 </div>

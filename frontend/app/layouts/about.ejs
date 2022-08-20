@@ -1,8 +1,8 @@
 <section class="section  about">
     <div class="container">
-        <div class="about__content">
+        <div class="about__left">
             <h2 class="about__title title">Почему выбирают нас?</h2>
-            <span class="about__subtitle subtitle"></span>
+            <span class="about__subtitle subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias cupiditate dolorem ex minima molestias mollitia praesentium quaerat sunt velit voluptatibus?</span>
             <div class="about__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aut dicta dolore
                 doloribus esse illum in libero modi, nihil praesentium quia quo quod, reiciendis rem sequi veniam
                 veritatis
@@ -14,27 +14,40 @@
                 voluptatem.
             </div>
         </div>
-        <div class="about__slider">
-            <span class="about__slider-title">Сертификаты</span>
-<!--            <div class="swiper " id="slider-about">-->
-<!--                <div class="swiper-wrapper">-->
-<!--                    <div class="swiper-slide">-->
-<!--                        <img src="./images/main/slide_0.jpg" alt="" loading=lazy-->
-<!--                             data-js-modal-open="{'src': '#modal-about', 'img': './images/main/slide_0.jpg'}">-->
-<!--                    </div>-->
-<!--                    <div class="swiper-slide">-->
-<!--                        <img src="./images/main/slide_0.jpg" alt="" loading=lazy-->
-<!--                             data-js-modal-open="{'src': '#modal-about', 'img': './images/main/slide_0.jpg'}">-->
-<!--                    </div>-->
-<!--                    <div class="swiper-slide">-->
-<!--                        <img src="./images/main/slide_0.jpg" alt="" loading=lazy-->
-<!--                             data-js-modal-open="{'src': '#modal-about', 'img': './images/main/slide_0.jpg'}">-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                </div>-->
+        <div class="about__right">
+            <div class="about__slider">
+                <div class="swiper " id="slider-about">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="about__img">
+                                <img src="./images/main/slide_0.jpg" alt="" loading=lazy
+                                     data-js-modal-open-button='{"src": "#modal-about", "img": "./images/main/slide_0.jpg"}'>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="about__img">
+                                <img src="./images/main/slide_0.jpg" alt="" loading=lazy
+                                     data-js-modal-open-button=`{"src":"#modal-feedback"}`>
+                            </div>
+                        </div>
+                        <div class="about__slider">
+                            <div class="swiper-slide">
+                                <div class="about__img">
+                                    <img src="./images/main/slide_0.jpg" alt="" loading=lazy
+                                         data-js-modal-open="{'src': '#modal-about', 'img': './images/main/slide_0.jpg'}">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-navigation">
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                </div>
             </div>
-
         </div>
+
+    </div>
 
     </div>
 </section>

@@ -3,6 +3,7 @@
 
 .header {
     background-color: var(--c-overlay);
+    position: relative;
 
     &__top {
         background-color: var(--c-gray-3);
@@ -17,6 +18,12 @@
     }
 
     &__bottom {
+        position: absolute;
+        top: 100%;
+        z-index: 2;
+        width: 100%;
+        background-color: var(--c-overlay);
+
         .container {
             padding: 10px 0;
             display: flex;

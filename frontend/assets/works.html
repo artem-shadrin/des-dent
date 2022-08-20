@@ -17,11 +17,36 @@
 
 
 
-<header>
-    <div class="container">
-        <div class="header">
-            <div class="header__logo">
-                <img src="./images/logo.svg" alt="" class="logo">
+<header class="header">
+    <div class="header__top">
+        <div class="container">
+            <span class="header__city">
+                <svg class="header__icon i-icon i-icon-phone">
+                    <use href="#icon-city"></use>
+                </svg>
+                г.Челябинск
+            </span>
+            <span class="header__street">
+                <svg class="header__icon i-icon i-icon-phone">
+                    <use href="#icon-street"></use>
+                </svg>
+                ул. Ленина д.1 пом.1
+            </span>
+            <span class="header__timing">
+                <svg class="header__icon i-icon i-icon-phone">
+                    <use href="#icon-timing"></use>
+                </svg>
+                Пн-Сб с 9:00 до 21:00, Вс с 10:00 до 16:00
+            </span>
+        </div>
+    </div>
+    <div class="header__bottom">
+        <div class="container">
+            <div class="logo">
+                <div class="logo__img">
+                    <img src="./images/logo.svg" alt="">
+                </div>
+                <span class="logo__text">Дизайн дент<br>Спасибо за доверие</span>
             </div>
             <div class="header__nav">
                 <nav class="header-nav">
@@ -67,15 +92,19 @@
             </div>
             <div class="header__phone">
                 <div class="phone">
-                    <a href="tel:+78888888888" class="phone__link">+78888888888</a>
+                    <a href="tel:+78888888888" class="phone__link">
+                        <svg class="phone__icon i-icon i-icon-phone">
+                            <use href="#icon-phone"></use>
+                        </svg>
+                        +78888888888</a>
                     
 
 
 
   <button
-    class="button"
+    class="button button--primary"
     type="submit"
-    
+    data-js-modal-open-button = '{"src": "#modal-feedback"}'
   
   >
     
@@ -88,9 +117,32 @@
 
                 </div>
             </div>
+            <div class="header__btn-menu">
+                
+
+
+
+  <button
+    class="button button--transparent button--icon-only"
+    type="submit"
+    data-js-burger-button=``
+  
+  >
+    
+      
+			<span class="button__label">Click me!</span>
+			
+        <svg class="button__icon i-icon i-icon-burger-menu">
+          <use href="#icon-burger-menu"></use>
+				</svg>
+      
+    
+  </button>
+
+
+            </div>
         </div>
     </div>
-
 </header>
 
 <main>
@@ -234,107 +286,50 @@
                 </div>
             </div>
         </div>
-        <div class="slider-hero__navigation">
-            <div class=" slider-hero-next">
-                <svg class=" i-icon i-icon-slider-arrow">
-                    <use href="#icon-slider-arrow"></use>
-                </svg>
-            </div>
-            <div class=" slider-hero-prev ">
-                <svg class=" i-icon i-icon-slider-arrow">
-                    <use href="#icon-slider-arrow"></use>
-                </svg>
-            </div>
+        <div class=" swiper-button-prev">
+        </div>
+        <div class=" swiper-button-next ">
         </div>
     </div>
 </section>
 <section class="section  about">
     <div class="container">
-        <h2 class="about__title title">О клинике</h2>
-        <span class="about__subtitle subtitle"></span>
-        <ul class="about__list">
-            <li class="about__card">
-                
-
-
-<div
-        class="about-card"
-        
->
-    <div class="about-card__content">
-        <h4 class="about-card__title">Lorem ipsum dolor sit</h4>
-        <div class="about-card__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam corporis dolorum inventore, iste minima, nesciunt odio quibusdam quisquam quos sed tempore veritatis voluptate voluptatem! A esse id iste omnis voluptas.</div>
-    </div>
-    <div class="about-card__media">
-        <img src="./images/main/slide_0.jpg" alt="Lorem ipsum dolor sit" loading=lazy>
-    </div>
-
-</div>
-
-            </li>
-            <li class="about__card">
-                
-
-
-<div
-        class="about-card about-card--reverse"
-        
->
-    <div class="about-card__content">
-        <h4 class="about-card__title">Lorem ipsum dolor sit</h4>
-        <div class="about-card__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam corporis dolorum inventore, iste minima, nesciunt odio quibusdam quisquam quos sed tempore veritatis voluptate voluptatem! A esse id iste omnis voluptas.</div>
-    </div>
-    <div class="about-card__media">
-        <img src="./images/main/slide_0.jpg" alt="Lorem ipsum dolor sit" loading=lazy>
-    </div>
-
-</div>
-
-            </li>
-            <li class="about__card">
-                
-
-
-<div
-        class="about-card"
-        
->
-    <div class="about-card__content">
-        <h4 class="about-card__title">Lorem ipsum dolor sit</h4>
-        <div class="about-card__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam corporis dolorum inventore, iste minima, nesciunt odio quibusdam quisquam quos sed tempore veritatis voluptate voluptatem! A esse id iste omnis voluptas.</div>
-    </div>
-    <div class="about-card__media">
-        <img src="./images/main/slide_0.jpg" alt="Lorem ipsum dolor sit" loading=lazy>
-    </div>
-
-</div>
-
-            </li>
-        </ul>
-        <div class="about__more">
-            
-
-
-
-  <button
-    class="button button--transparent"
-    type="submit"
-    
-  
-  >
-    
-      
-			<span class="button__label">Посмотреть наши работы</span>
-			
-        <svg class="button__icon i-icon i-icon-arrow">
-          <use href="#icon-arrow"></use>
-				</svg>
-      
-    
-  </button>
-
+        <div class="about__content">
+            <h2 class="about__title title">Почему выбирают нас?</h2>
+            <span class="about__subtitle subtitle"></span>
+            <div class="about__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aut dicta dolore
+                doloribus esse illum in libero modi, nihil praesentium quia quo quod, reiciendis rem sequi veniam
+                veritatis
+                voluptatem voluptates. Asperiores, cumque dignissimos eaque illum pariatur quo vero voluptate. At beatae
+                culpa ducimus iste optio perspiciatis temporibus velit? Beatae blanditiis consequuntur culpa cupiditate,
+                expedita, explicabo illo nobis, odio pariatur quas quo quos ratione sint. Accusamus aliquid cum
+                dignissimos
+                doloribus, est, hic ipsum minima numquam praesentium quisquam repellendus reprehenderit temporibus,
+                voluptatem.
+            </div>
+        </div>
+        <div class="about__slider">
+            <span class="about__slider-title">Сертификаты</span>
+<!--            <div class="swiper " id="slider-about">-->
+<!--                <div class="swiper-wrapper">-->
+<!--                    <div class="swiper-slide">-->
+<!--                        <img src="./images/main/slide_0.jpg" alt="" loading=lazy-->
+<!--                             data-js-modal-open="{'src': '#modal-about', 'img': './images/main/slide_0.jpg'}">-->
+<!--                    </div>-->
+<!--                    <div class="swiper-slide">-->
+<!--                        <img src="./images/main/slide_0.jpg" alt="" loading=lazy-->
+<!--                             data-js-modal-open="{'src': '#modal-about', 'img': './images/main/slide_0.jpg'}">-->
+<!--                    </div>-->
+<!--                    <div class="swiper-slide">-->
+<!--                        <img src="./images/main/slide_0.jpg" alt="" loading=lazy-->
+<!--                             data-js-modal-open="{'src': '#modal-about', 'img': './images/main/slide_0.jpg'}">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                </div>-->
+            </div>
 
         </div>
+
     </div>
 </section>
 <section class="section service">
@@ -365,7 +360,7 @@
   <button
     class="button button--transparent"
     type="submit"
-    modal-btn-open=``
+    data-js-modal-open-button = '{"src": "#modal-feedback"}'
   
   >
     
@@ -404,7 +399,7 @@
   <button
     class="button button--transparent"
     type="submit"
-    modal-btn-open=``
+    data-js-modal-open-button = '{"src": "#modal-feedback"}'
   
   >
     
@@ -442,7 +437,7 @@
   <button
     class="button button--transparent"
     type="submit"
-    modal-btn-open=``
+    data-js-modal-open-button = '{"src": "#modal-feedback"}'
   
   >
     
@@ -480,7 +475,7 @@
   <button
     class="button button--transparent"
     type="submit"
-    modal-btn-open=``
+    data-js-modal-open-button = '{"src": "#modal-feedback"}'
   
   >
     
@@ -519,7 +514,7 @@
   <button
     class="button button--transparent"
     type="submit"
-    modal-btn-open=``
+    data-js-modal-open-button = '{"src": "#modal-feedback"}'
   
   >
     
@@ -558,7 +553,7 @@
   <button
     class="button button--transparent"
     type="submit"
-    modal-btn-open=``
+    data-js-modal-open-button = '{"src": "#modal-feedback"}'
   
   >
     
@@ -597,7 +592,7 @@
   <button
     class="button button--transparent"
     type="submit"
-    modal-btn-open=``
+    data-js-modal-open-button = '{"src": "#modal-feedback"}'
   
   >
     
@@ -636,7 +631,7 @@
   <button
     class="button button--transparent"
     type="submit"
-    modal-btn-open=``
+    data-js-modal-open-button = '{"src": "#modal-feedback"}'
   
   >
     
@@ -675,7 +670,7 @@
   <button
     class="button button--transparent"
     type="submit"
-    modal-btn-open=``
+    data-js-modal-open-button = '{"src": "#modal-feedback"}'
   
   >
     
@@ -714,7 +709,7 @@
   <button
     class="button button--transparent"
     type="submit"
-    modal-btn-open=``
+    data-js-modal-open-button = '{"src": "#modal-feedback"}'
   
   >
     
@@ -753,7 +748,7 @@
   <button
     class="button button--transparent"
     type="submit"
-    modal-btn-open=``
+    data-js-modal-open-button = '{"src": "#modal-feedback"}'
   
   >
     
@@ -792,7 +787,7 @@
   <button
     class="button button--transparent"
     type="submit"
-    modal-btn-open=``
+    data-js-modal-open-button = '{"src": "#modal-feedback"}'
   
   >
     
@@ -809,7 +804,7 @@
 
             </li>
         </ul>
-        <div class="service__more">
+        <div class="service__more button__more">
             
 
 
@@ -822,7 +817,7 @@
   >
     
       
-			<span class="button__label">Посмотреть все услуги</span>
+			<span class="button__label">Все услуги</span>
 			
         <svg class="button__icon i-icon i-icon-arrow">
           <use href="#icon-arrow"></use>
@@ -838,8 +833,7 @@
 <section class="section newsletter">
   <div class="container">
     <div class="newsletter__content">
-      <h2 class="h2 title newsletter__title">Записаться на консультацию </h2>
-      <span class="newsletter__legend">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+      <h2 class="h2 title newsletter__title">Запишитесь на прием любого врача на удобное время прямо сейчас!».  </h2>
       <div class="newsletter__form">
         <form action="/" class="form-newsletter" data-js-form novalidate>
           <div class="form-newsletter__email">
@@ -1087,7 +1081,7 @@
                 </div>
             </div>
         </div>
-        <div class="feedback__more">
+        <div class="feedback__more button__more">
             
 
 
@@ -1100,7 +1094,7 @@
   >
     
       
-			<span class="button__label">Посмотреть все отзывы</span>
+			<span class="button__label">Все отзывы</span>
 			
         <svg class="button__icon i-icon i-icon-arrow">
           <use href="#icon-arrow"></use>
@@ -1209,98 +1203,8 @@
 </div>
 
             </li>
-            <li class="specialists__item">
-                
-
-
-<div
-        class="card"
-        
->
-    <div class="imgBx">
-        <img src="https://images.unsplash.com/photo-1532123675048-773bd75df1b4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-             alt="images" loading="lazy">
-    </div>
-    <div class="details">
-        <h2>SomeOne Famous<br><span>Director</span></h2>
-    </div>
-</div>
-
-            </li>
-            <li class="specialists__item">
-                
-
-
-<div
-        class="card"
-        
->
-    <div class="imgBx">
-        <img src="https://images.unsplash.com/photo-1532123675048-773bd75df1b4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-             alt="images" loading="lazy">
-    </div>
-    <div class="details">
-        <h2>SomeOne Famous<br><span>Director</span></h2>
-    </div>
-</div>
-
-            </li>
-            <li class="specialists__item">
-                
-
-
-<div
-        class="card"
-        
->
-    <div class="imgBx">
-        <img src="https://images.unsplash.com/photo-1532123675048-773bd75df1b4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-             alt="images" loading="lazy">
-    </div>
-    <div class="details">
-        <h2>SomeOne Famous<br><span>Director</span></h2>
-    </div>
-</div>
-
-            </li>
-            <li class="specialists__item">
-                
-
-
-<div
-        class="card"
-        
->
-    <div class="imgBx">
-        <img src="https://images.unsplash.com/photo-1532123675048-773bd75df1b4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-             alt="images" loading="lazy">
-    </div>
-    <div class="details">
-        <h2>SomeOne Famous<br><span>Director</span></h2>
-    </div>
-</div>
-
-            </li>
-            <li class="specialists__item">
-                
-
-
-<div
-        class="card"
-        
->
-    <div class="imgBx">
-        <img src="https://images.unsplash.com/photo-1532123675048-773bd75df1b4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-             alt="images" loading="lazy">
-    </div>
-    <div class="details">
-        <h2>SomeOne Famous<br><span>Director</span></h2>
-    </div>
-</div>
-
-            </li>
         </ul>
-        <div class="specialists__more">
+        <div class="specialists__more button__more">
             
 
 
@@ -1313,7 +1217,7 @@
   >
     
       
-			<span class="button__label">Посмотреть всех врачей</span>
+			<span class="button__label">Все врачи</span>
 			
         <svg class="button__icon i-icon i-icon-arrow">
           <use href="#icon-arrow"></use>
@@ -1655,31 +1559,31 @@
     
       <li class="mobile-menu__item">
         <a href="/" class="mobile-menu__link">
-          О компании
+          Главная
         </a>
       </li>
     
       <li class="mobile-menu__item">
         <a href="/" class="mobile-menu__link">
-          Продукция
+          Прайс
         </a>
       </li>
     
       <li class="mobile-menu__item">
         <a href="/" class="mobile-menu__link">
-          Исследования
+          Врачи
         </a>
       </li>
     
       <li class="mobile-menu__item">
         <a href="/" class="mobile-menu__link">
-          События
+          Отзывы
         </a>
       </li>
     
       <li class="mobile-menu__item">
         <a href="/" class="mobile-menu__link">
-          Контакты
+          Наши работы
         </a>
       </li>
     

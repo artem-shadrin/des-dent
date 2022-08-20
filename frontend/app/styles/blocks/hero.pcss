@@ -33,9 +33,20 @@
 
     &__img {
         position: absolute;
+        right: 0;
         top: 0;
-        left: 0;
+        height: 100%;
         z-index: -1;
+        flex: 0 0 45%
+    }
+
+    &__content {
+        flex: 0 0 65%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 90px 120px;
+        background: linear-gradient(to right, var(--c-main-2) 70%, #0000);
     }
 
     &__title {
@@ -51,67 +62,6 @@
         margin-bottom: var(--descriptionMarginBottom);
     }
 
-    &__advantages {
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        z-index: 1;
-        padding: var(--advPadding);
-        background-color: var(--advBgColor);
-        overflow: auto;
-        scrollbar-width: none;
-
-        &::-webkit-scrollbar {
-            display: none;
-        }
-        @media (--desktop-s) {
-            --advPadding: 16px 30px;
-        }
-
-    }
-
-    &__advantages-wrapper {
-        @media (--tablet) {
-            width: max-content;
-        }
-    }
-
-    &__advantages-list {
-        display: flex;
-        gap: var(--advListGap);
-        align-items: center;
-        justify-content: space-between;
-        @media (--tablet) {
-            animation-name: translation;
-            animation-duration: 20s;
-            animation-iteration-count: infinite;
-            animation-timing-function: linear;
-        }
-    }
-
-    &__advantages-item {
-
-
-        display: flex;
-        gap: var(--advItemGap);
-        align-items: center;
-        justify-content: center;
-        color: var(--advItemColor);
-    }
-
-    &__advantages-value {
-        @mixin fluid-text 64, 32;
-        font-weight: var(--advValueFontWeight);
-    }
-
-    &__advantages-text {
-        display: inline-block;
-        max-width: var(--advTextMaxWidth);
-        font-weight: var(--advTextFontWeight);
-        font-size: var(--advTextFontSize);
-        line-height: var(--advTextLineHeight);
-    }
 
 }
 
