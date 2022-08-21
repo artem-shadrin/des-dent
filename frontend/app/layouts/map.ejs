@@ -1,22 +1,66 @@
 <section class="section geography">
 
     <div class="geography__information">
-        <h2 class="h2 geography__title">Где мы находимся</h2>
-        <h3 class="geography__subtitle"><span class="geography__numb">Lorem.</span> <br> Lorem ipsum dolor sit amet.
-        </h3>
-        <div class="geography__text">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda consequuntur dolores ea ex explicabo
-            facere illo magnam minus molestias veniam?
+        <h2 class="h2 geography__title title">Где мы</br>находимся</h2>
+        <div class="geography__group">
+            <div class="geography__group-title">
+                <svg class="header__icon i-icon i-icon-city">
+                    <use href="#icon-city"></use>
+                </svg>
+                Адрес:
+            </div>
+            <div class="geography__item">
+                г. Химки, ул. Московская, д.14, этаж 3
+
+            </div>
         </div>
-        <div class="geography__about-company">
-            <%- require("../components/button/template.ejs")({
-                icon: "icon-arrow",
-                label: "Записаться на прием"
-            }) %>
+
+        <div class="geography__group">
+            <div class="geography__group-title">
+                <svg class="header__icon i-icon i-icon-phone">
+                    <use href="#icon-phone"></use>
+                </svg>
+                Телефон:
+            </div>
+            <div class="geography__item">
+                <a href="tel:+74951810045" class="geography__phone"> +7 (495) 181-00-45
+                </a>
+            </div>
+        </div>
+        <div class="geography__group">
+            <div class="geography__group-title">
+                <svg class="header__icon i-icon i-icon-timing">
+                    <use href="#icon-timing"></use>
+                </svg>
+                Время работы:
+            </div>
+            <div class="geography__item">
+                Пн-Пт 8:00-21:00
+            </div>
+            <div class="geography__item">
+                Сб 8:00-20:00
+            </div>
+            <div class="geography__item">
+                Вс 9:00-20:00
+            </div>
+        </div>
+        <div class="geography__actions">
+            <div class="geography__group">
+                <%- require("../components/button/template.ejs")({
+                    icon: "icon-arrow",
+                    label: "Заказать звонок"
+                }); %>
+            </div>
+            <div class="geography__group">
+                <%- require("../components/button/template.ejs")({
+                    icon: "icon-arrow",
+                    label: "Записаться на прием"
+                }); %>
+            </div>
         </div>
     </div>
     <div class="geography__map">
-        <%- require("../components/map/template.ejs")() %>
+        <%- require("../components/map/template.ejs")(); %>
     </div>
 
 </section>

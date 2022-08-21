@@ -1,107 +1,107 @@
 <%
-const cfg = {...require("./data.json"), ...arguments?.[0]}
+const cfg = {...require("./data.json"), ...arguments?.[0]};
 const {
-  extraClasses,
-  extraAttrs
-} = cfg
+    extraClasses,
+    extraAttrs
+} = cfg;
 %>
 <%
-const classes = `footer ${extraClasses.join(" ")}`.trim()
-const attrs = extraAttrs.join(" ")
+const classes = `footer ${extraClasses.join(" ")}`.trim();
+const attrs = extraAttrs.join(" ");
 %>
 
-<footer class="<%= classes %>" <%- extraAttrs %>>
-  <div class="container">
-    <div class="footer__menu">
-      <div class="footer__logo">
-        <%- require("../logo/template.ejs")({
-          img: "./images/logo.svg",
-          title: "Компания",
-          href: "/"
-        }) %>
-      </div>
-      <div class="footer__navigation">
-        <nav class="footer-navigation">
-          <ul class="footer-navigation__list">
-            <li class="footer-navigation__group main-information">
-              <ul>
-                <li class="footer-navigation__item">
-                  <a href="/" class="footer-navigation__link footer-text">Прайс</a>
-                </li>
-                <li class="footer-navigation__item">
-                  <a href="/" class="footer-navigation__link footer-text">Врачи</a>
-                </li>
-                <li class="footer-navigation__item">
-                  <a href="/" class="footer-navigation__link footer-text">Отзывы</a>
-                </li>
-                <li class="footer-navigation__item">
-                  <a href="/" class="footer-navigation__link footer-text">Наши работы</a>
-                </li>
-                <li class="footer-navigation__item">
-                  <a href="/" class="footer-navigation__link footer-text">Политика конфиденциальности</a>
-                </li>
-              </ul>
-            </li>
-            <li class="footer-navigation__group contacts">
-              <span class="footer-text">Контакты</span>
-              <ul class="footer-navigation__subgroup ">
-                <li class="footer-navigation__item phones">
-                  <span class="footer-text footer-text--transparent">Телефоны:</span>
-                  <ul class="phones__list">
-                    <li class="phones__item">
-                      <a class="footer-navigation__link footer-text" href="tel:+70000000000">+7 (000)
-                        000-00-00 <span class="footer-text footer-text--transparent">(для звонков по России)</span></a>
-                    </li>
-                    <li class="phones__item">
-                      <a class="footer-navigation__link footer-text" href="tel:+70000000000">+7 (000)
-                        000-00-00</a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="footer-navigation__item emails">
-                  <span class="footer-text footer-text--transparent"> E-mail:</span>
-                  <ul class="phones__list">
-                    <li class="phones__item">
-                      <a class="footer-navigation__link footer-text" href="mailto:company@mail.ru">company@mail.ru</a>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </nav>
-      </div>
-      <div class="footer__social">
-        <div class="social">
-          <span class="footer-text social-text">Поделиться страницей с соц. сетях:</span>
-          <ul class="social__list">
-            <li class="social__item"><a href="/" class="social__link" title="Youtube">
-                <svg class="i-icon i-icon-youtube">
-                  <use href="#icon-youtube"></use>
+<footer class="<%= classes; %>" <%- extraAttrs; %>>
+    <div class="container">
+        <div class="footer__menu">
+            <div class="footer__left">
+                <div class="footer__title">
+                    Стомотологическая клиника
+                </div>
+                <div class="logo">
+                    <div class="logo__img">
+                        <img src="./images/logo.svg" alt="">
+                    </div>
+                    <span class="logo__text">Дизайн дент<br>Спасибо за доверие</span>
+                </div>
+                <span class="header__city">
+                <svg class="header__icon i-icon i-icon-phone">
+                    <use href="#icon-city"></use>
                 </svg>
-              </a></li>
-            <li class="social__item"><a href="/" class="social__link" title="Facebook">
-                <svg class="i-icon i-icon-facebook">
-                  <use href="#icon-facebook"></use>
+                г.Челябинск
+            </span>
+                <span class="header__street">
+                <svg class="header__icon i-icon i-icon-phone">
+                    <use href="#icon-street"></use>
                 </svg>
-              </a></li>
-            <li class="social__item"><a href="/" class="social__link" title="LinkedIn">
-                <svg class="i-icon i-icon-linkedin">
-                  <use href="#icon-linkedin"></use>
+                ул. Ленина д.1 пом.1
+                </span>
+                <span class="header__timing">
+                <svg class="header__icon i-icon i-icon-phone">
+                    <use href="#icon-timing"></use>
                 </svg>
-              </a></li>
-          </ul>
+                Пн-Сб с 9:00 до 21:00, Вс с 10:00 до 16:00
+            </span>
+            </div>
+            <div class="footer__navigation">
+                <nav class="footer-navigation">
+                    <ul class="footer-navigation__list">
+                        <li class="footer-navigation__group main-information">
+                            <ul>
+                                <li class="footer-navigation__item">
+                                    <a href="/" class="footer-navigation__link footer-text">Прайс</a>
+                                </li>
+                                <li class="footer-navigation__item">
+                                    <a href="/" class="footer-navigation__link footer-text">Врачи</a>
+                                </li>
+                                <li class="footer-navigation__item">
+                                    <a href="/" class="footer-navigation__link footer-text">Отзывы</a>
+                                </li>
+                                <li class="footer-navigation__item">
+                                    <a href="/" class="footer-navigation__link footer-text">Наши работы</a>
+                                </li>
+                                <li class="footer-navigation__item">
+                                    <a href="/" class="footer-navigation__link footer-text">Политика
+                                        конфиденциальности</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer__right">
+                <div class="footer__social">
+                    <div class="social">
+                        <ul class="social__list">
+                            <li class="social__item"><a href="/" class="social__link" title="WhatsApp">
+                                    <img src="../images/whatsapp-icon.svg" alt="WhatsApp" loading=lazy>
+                                </a></li>
+                            <li class="social__item"><a href="/" class="social__link" title="Telegram">
+                                    <img src="../images/telegram-icon.svg" alt="Telegram" loading=lazy>
+                                </a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer__btn-record">
+                    <%- require("../button/template.ejs")({
+                        label: "Записаться к врачу"
+                    }) %>
+                </div>
+                <div class="footer__btn-question">
+                    <%- require("../button/template.ejs")({
+                        label: "Задать вопрос"
+                    }) %>
+                </div>
+            </div>
         </div>
-      </div>
+        <div class="footer__information">
+            <div class="footer__registered">
+                © 2006-2022 COMPANY
+            </div>
+            <div class="footer__copyright">
+                Все права защищены. Копирование информации сайта допустимо только с письменного разрешения
+                администрации.
+                Правила обработки персональных данных и хранении данных cookie.
+            </div>
+        </div>
     </div>
-    <div class="footer__information">
-      <div class="footer__registered">
-        © 2006-2022 COMPANY
-      </div>
-      <div class="footer__copyright">
-        Все права защищены. Копирование информации сайта допустимо только с письменного разрешения администрации.
-        Правила обработки персональных данных и хранении данных cookie.
-      </div>
-    </div>
-  </div>
 </footer>

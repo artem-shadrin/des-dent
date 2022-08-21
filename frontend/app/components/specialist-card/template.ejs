@@ -1,18 +1,18 @@
 <%
-const cfg = {...require("./data.json"), ...arguments?.[0]}
+const cfg = {...require("./data.json"), ...arguments?.[0]};
 const {
     extraClasses,
     extraAttrs
-} = cfg
+} = cfg;
 %>
 <%
-const classes = `card ${extraClasses.join(" ")}`.trim()
-const attrs = extraAttrs.join(" ")
+const classes = `card ${extraClasses.join(" ")}`.trim();
+const attrs = extraAttrs.join(" ");
 %>
 
 <div
-        class="<%= classes %>"
-        <%- extraAttrs %>
+        class="<%= classes ;%>"
+        <%- extraAttrs; %>
 >
     <div class="imgBx">
         <img src="https://images.unsplash.com/photo-1532123675048-773bd75df1b4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
@@ -20,5 +20,12 @@ const attrs = extraAttrs.join(" ")
     </div>
     <div class="details">
         <h2>SomeOne Famous<br><span>Director</span></h2>
+        <div class="specialists__btn-signup">
+            <%- require("../button/template.ejs")({
+                extraClasses: ["button--transparent"],
+                label: "Записаться",
+                extraAttrs: [`data-js-modal-open-button = '{"src": "#modal-specialist"}'`]
+            }); %>
+        </div>
     </div>
 </div>

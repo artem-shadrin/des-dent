@@ -2,14 +2,22 @@
     padding-block: 20px;
     background-color: var(--c-main);
 
-    &__title{
+    &__title {
         color: var(--c-light);
     }
+
     &__list {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-        gap: 40px;
+        /* grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); */
+        /* grid-gap: 40px; */
+        gap: 80px;
         margin-bottom: 50px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        flex: 1 1 320px;
     }
 
     &__more {

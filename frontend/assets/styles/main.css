@@ -839,42 +839,55 @@ button * {
         pointer-events: none;
     }
 
-section{
+section {
     padding-top: 30px;
     padding-bottom: 30px;
+}
+
+.subtitle {
+    color: var(--c-gray);
+    display: inline-block;
+    margin-bottom: 20px;
+    width: 80%;
+    font-size: 1.5rem;
+    font-weight: 600;
 }
 
 
 .about .container {
         display: flex;
-        gap: 10px;
+        gap: 100px;
     }
 
-    .about__content {
+    .about__left {
         flex: 0 0 70%;
     }
 
-    .about__slider {
+    .about__right {
         flex: 0 0 30%;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-
+        max-width: 30%;
+        max-height: 480px;
     }
+
+    .about__img {
+        width: 360px;
+        height: 480px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+    }
+
+    .about__img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
     .about__title {
     }
 
     .about__subtitle {
-    }
-
-    .about__list {
-        display: grid;
-        grid-gap: 10px;
-        gap: 10px;
-    }
-
-    .about__item {
     }
 
     .about__more {
@@ -929,6 +942,10 @@ section{
         color: var(--c-light);
     }
 
+    .feedback__subtitle {
+        color: var(--c-light);
+    }
+
     .feedback__content {
         display: flex;
         justify-content: space-between;
@@ -936,13 +953,16 @@ section{
     }
 
     .feedback__slider {
-        flex: 1 1 360px;
-        max-width: 640px;
+        max-width: 100%;
     }
 
     .feedback__info {
         margin-top: 40px;
         color: var(--c-light);
+    }
+
+    .feedback__more {
+        margin-top: 30px;
     }
 
     .feedback__more .button {
@@ -1225,13 +1245,25 @@ section{
     padding-top: 0;
     height: 100vh;
 
+
 }
 
 .hero__img {
         position: absolute;
+        right: 0;
         top: 0;
-        left: 0;
+        height: 100%;
         z-index: -1;
+        flex: 0 0 45%
+    }
+
+.hero__content {
+        flex: 0 0 65%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 90px 120px;
+        background: linear-gradient(to right, var(--c-main-2) 70%, rgba(0,0,0,0));
     }
 
 .hero__title {
@@ -1245,89 +1277,6 @@ section{
         color: var(--descriptionColor);
         max-width: var(--descriptionMaxWidth);
         margin-bottom: var(--descriptionMarginBottom);
-    }
-
-.hero__advantages {
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        z-index: 1;
-        padding: var(--advPadding);
-        background-color: var(--advBgColor);
-        overflow: auto;
-        scrollbar-width: none;
-
-    }
-
-.hero__advantages::-webkit-scrollbar {
-            display: none;
-        }
-
-@media (max-width: 1366px) {
-
-.hero__advantages {
-            --advPadding: 16px 30px
-
-    }
-        }
-
-@media (max-width: 1280px) {
-
-.hero__advantages-wrapper {
-            width: -moz-max-content;
-            width: max-content
-    }
-        }
-
-.hero__advantages-list {
-        display: flex;
-        gap: var(--advListGap);
-        align-items: center;
-        justify-content: space-between;
-    }
-
-@media (max-width: 1280px) {
-
-.hero__advantages-list {
-            animation-name: translation;
-            animation-duration: 20s;
-            animation-iteration-count: infinite;
-            animation-timing-function: linear
-    }
-        }
-
-.hero__advantages-item {
-
-
-        display: flex;
-        gap: var(--advItemGap);
-        align-items: center;
-        justify-content: center;
-        color: var(--advItemColor);
-    }
-
-.hero__advantages-value {
-        font-size: calc(32px + (64 - 32) * ((100vw - 360px) / (1920 - 360)));
-    }
-
-@media (min-width: 1921px) {
-
-.hero__advantages-value {
-        font-size: 64px;
-    }
-    }
-
-.hero__advantages-value {
-        font-weight: var(--advValueFontWeight);
-}
-
-.hero__advantages-text {
-        display: inline-block;
-        max-width: var(--advTextMaxWidth);
-        font-weight: var(--advTextFontWeight);
-        font-size: var(--advTextFontSize);
-        line-height: var(--advTextLineHeight);
     }
 
 
@@ -1564,16 +1513,9 @@ section{
         }
 
 
-.service {
-    background-color: var(--c-main);
-}
-
-    .service__title {
-        color: var(--c-light);
+.service__subtitle {
     }
 
-    .service__subtitle {
-    }
 
     .service__list {
         display: grid;
@@ -1583,8 +1525,10 @@ section{
         margin-bottom: 50px;
     }
 
+
     .service__item {
     }
+
 
     .service__more .button {
             --textColor: var(--c-light-2);
@@ -1697,6 +1641,7 @@ section{
     --slidePaddingX: 210px;
     --slidePaddingBottom: 0;
     --sliderHeight: 100%;
+    flex: 1 1 35%;
 
     --counterFontWeight: 800;
     --counterLineHeight: 80%;
@@ -1708,10 +1653,7 @@ section{
 }
 
 .slider-hero .swiper-slide {
-        padding-top: var(--slidePaddingTop);
-        padding-left: var(--slidePaddingX);
-        padding-right: var(--slidePaddingX);
-        padding-bottom: var(--slidePaddingBottom);
+        display: flex;
 
 
     }
@@ -1767,7 +1709,6 @@ section{
         }
 
 .slider-hero .swiper-slide img {
-            position: absolute;
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -2246,6 +2187,7 @@ section{
 
 .header {
     background-color: var(--c-overlay);
+    position: relative;
 }
 
 .header__top {
@@ -2259,6 +2201,14 @@ section{
             justify-content: flex-end;
             align-items: center;
         }
+
+.header__bottom {
+        position: absolute;
+        top: 100%;
+        z-index: 2;
+        width: 100%;
+        background-color: var(--c-overlay);
+    }
 
 .header__bottom .container {
             padding: 10px 0;
@@ -4329,25 +4279,22 @@ section{
 figure.snip1197 {
     position: relative;
     min-width: 360px;
-    max-width: 640px;
+    //max-width: 640px;
     width: 100%;
     text-align: left;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
     display: flex;
-    border-radius: 8px;
     margin-bottom: 40px;
 }
 figure.snip1197 img {
     float: right;
     max-width: 40%;
     vertical-align: middle;
-    border-radius: 0 8px 8px 0;
 }
 figure.snip1197 figcaption {
     width: 60%;
     position: relative;
     background-color: #ffffff;
-    border-radius: 8px 0 0 8px;
 }
 figure.snip1197 blockquote {
     position: relative;
