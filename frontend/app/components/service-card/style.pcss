@@ -4,11 +4,13 @@
     box-shadow: var(--shadow);
     aspect-ratio: 10/12;
     display: grid;
-    align-items: center;
+    align-items: flex-start;
+    grid-template-rows: 35% 10% 50% 5%;
     justify-content: center;
     padding: 30px 25px;
     background-color: var(--c-light);
     transition: transform .2s;
+    user-select: none;
 
     &__icon {
         width: max-content;
@@ -16,15 +18,18 @@
 
         .i-icon {
             --size: 5rem;
+            --color: var(--c-main);
         }
     }
 
     &__caption {
+        width: max-content;
+        margin: 0 auto;
     }
 
     &__description {
-        font-size: 0.8rem;
-        @mixin line-clamp 8;
+        font-size: 0.7rem;
+        @mixin line-clamp 10;
     }
 
     &__btn-call {

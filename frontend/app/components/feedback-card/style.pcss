@@ -1,33 +1,40 @@
 @import "../../styles/mixins.pcss";
-
-@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
-@import url(https://fonts.googleapis.com/css?family=Raleway:400,800);
+@import "../../styles/media.pcss";
 
 .feedback-card {
     margin: 40px;
+    margin-bottom: 60px;
 }
 
 figure.snip1197 {
     position: relative;
     min-width: 360px;
-    //max-width: 640px;
     width: 100%;
     text-align: left;
     box-shadow: 0 0 5px rgb(0 0 0 / 15%);
     display: flex;
     margin-bottom: 40px;
+    @media (--tablet-xxs) {
+        flex-direction: column-reverse;
+    }
 }
 
 figure.snip1197 img {
     float: right;
     max-width: 40%;
     vertical-align: middle;
+    @media (--tablet-xxs) {
+        max-width: 80%;
+    }
 }
 
 figure.snip1197 figcaption {
     width: 60%;
     position: relative;
     background-color: #ffffff;
+    @media (--tablet-xxs) {
+        width: 80%;
+    }
 }
 
 figure.snip1197 blockquote {
@@ -39,12 +46,14 @@ figure.snip1197 blockquote {
     margin: 0;
     line-height: 1.6em;
     font-style: italic;
+    @media (--desktop-s) {
+        padding: 15px 25px 15px 25px;
+
+    }
 }
 
 figure.snip1197 blockquote:before,
 figure.snip1197 blockquote:after {
-    font-family: 'FontAwesome';
-    content: "\201C";
     position: absolute;
     font-size: 50px;
     opacity: 0.3;

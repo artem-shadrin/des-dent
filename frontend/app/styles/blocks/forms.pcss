@@ -19,7 +19,13 @@
         display: inline-block;
         margin-bottom: 25px;
     }
+    &__right {
+        grid-row: 1/4;
 
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
     &__fieldset {
         display: grid;
         row-gap: 20px;
@@ -30,7 +36,9 @@
     }
 
     &__message {
+        flex: 1 1 auto;
         grid-row: 1/4;
+
     }
 
     &__footer {
@@ -40,6 +48,52 @@
         margin-top: 50px;
         grid-template-columns: 300px auto;
         grid-template-rows: repeat(2, 1fr);
+    }
+
+    &__grecaptcha {
+        grid-row: 1/3;
+    }
+
+    &__privacy {
+        align-self: start;
+    }
+
+    &__submit {
+        margin-left: auto;
+    }
+}
+
+.form-call {
+    &__legend {
+        display: inline-block;
+        margin-bottom: 25px;
+    }
+
+    &__fieldset {
+        display: grid;
+        row-gap: 20px;
+        column-gap: 40px;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-auto-flow: column;
+    }
+
+    &__message {
+        grid-row: 1/4;
+    }
+
+
+
+    &__footer {
+        display: grid;
+        column-gap: 40px;
+        row-gap: 22px;
+        margin-top: 50px;
+        grid-template-columns: 300px auto;
+        grid-template-rows: repeat(2, 1fr);
+        @media (--tablet-xs) {
+            grid-template-columns: 1fr;
+        }
     }
 
     &__grecaptcha {

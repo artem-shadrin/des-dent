@@ -4,6 +4,7 @@
     display: none;
     padding: 80px 80px 85px !important;
     width: calc(100% * 1414 / 1920) !important;
+    max-width: 100%;
 
     &__title {
         font-weight: 700;
@@ -11,12 +12,18 @@
         line-height: 52px;
         margin-bottom: 50px;
     }
-    &__actions{
+
+    &__actions {
         display: flex;
         flex-direction: row-reverse;
     }
-    @media (--desktop-s){
+
+    @media (--desktop-s) {
         padding: 40px 40px 45px !important;
+        width: 90% !important;
+    }
+    @media (--tablet) {
+        padding: 20px 20px 25px !important;
     }
 }
 
@@ -25,3 +32,5 @@
     right: 6px !important;
     color: var(--c-main) !important;
 }
+
+

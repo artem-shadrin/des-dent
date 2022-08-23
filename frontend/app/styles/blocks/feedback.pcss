@@ -26,6 +26,7 @@
 
     &__more {
         margin-top: 30px;
+
         .button {
             --textColor: var(--c-light-2);
             --iconColor: var(--c-light-2);
@@ -33,5 +34,52 @@
             --hoverIconColor: var(--c-accent);
 
         }
+    }
+
+    &__review {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 70%;
+        margin-top: 40px;
+        box-shadow: -1px 2px 25px rgba(0, 0, 0, 0.25);
+        background-color: var(--c-light);
+    }
+
+    &__review-content {
+        flex: 0 0 65%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 30px 40px;
+        background: linear-gradient(to right, var(--c-light) 70%, #0000);
+    }
+
+    &__review-img {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        z-index: -1;
+        flex: 0 0 45%;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__review-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    &__review-description {
+        margin-bottom: 20px;
+    }
+
+    &__btn-review {
     }
 }

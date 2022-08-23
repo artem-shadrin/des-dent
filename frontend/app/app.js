@@ -26,6 +26,7 @@ import "./components/about-card";
 import "./components/service-card";
 import "./components/feedback-card";
 import "./components/specialist-card";
+import "./components/select";
 
 
 import Modals from "../app/js/modals";

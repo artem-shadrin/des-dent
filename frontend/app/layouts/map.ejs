@@ -53,6 +53,9 @@
             </div>
             <div class="geography__group">
                 <%- require("../components/button/template.ejs")({
+                    extraAttrs: [`data-js-modal-open-button = ${JSON.stringify({
+                        src: "#modal-specialist"
+                    })}`],
                     icon: "icon-arrow",
                     label: "Записаться на прием"
                 }); %>

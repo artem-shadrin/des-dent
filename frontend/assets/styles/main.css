@@ -1019,6 +1019,97 @@ section {
 .form-feedback__submit {
         margin-left: auto;
     }
+@keyframes show-modal {
+       0% {
+         opacity: 0;
+         transform: scale(0) translateZ(0);
+       }
+  
+       100% {
+         opacity: 1;
+         transform: scale(1) translateZ(0);
+       }
+     }
+@keyframes translation {
+  0% {
+    transform:translate(100%);
+  }
+  100% {
+    transform:translate(-100%);
+  }
+}
+@keyframes hide-modal {
+  0% {
+    opacity: 1;
+    transform: scale(1) translateZ(0);
+  }
+  
+  100% {
+    opacity: 0;
+    transform: scale(.5) translateZ(0);
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  
+  100% {
+    transform: rotate(1turn);
+  }
+}
+@keyframes pulse {
+  0%,
+  50%,
+  100% {
+    transform: scale(1) translateZ(0);
+  }
+  
+  25%,
+  75% {
+    transform: scale(1.1) translateZ(0);
+  }
+}
+@keyframes shake {
+  0%,
+  50%,
+  100% {
+    transform: translateX(0) translateZ(0);
+  }
+  
+  25% {
+    transform: translateX(-5px) translateZ(0);
+  }
+  
+  75% {
+    transform: translateX(5px) translateZ(0);
+  }
+}
+@keyframes lazyLoading {
+  0% {
+    background-position: 0 92%;
+  }
+  
+  100% {
+    background-position: 100% 9%;
+  }
+}
+@keyframes ripple {
+  0% {
+    transform: scale(0) translateZ(0);
+    opacity: 0;
+  }
+  
+  75% {
+    transform: scale(450) translateZ(0);
+    opacity: 0.75;
+  }
+  
+  100% {
+    transform: scale(700) translateZ(0);
+    opacity: 0;
+  }
+}
 .geography {
     padding-top: 0;
     padding-bottom: 0;
@@ -1057,28 +1148,25 @@ section {
     overflow: hidden;
     height: 100vh;
 }
-
-    @media (max-width: 1024px) {.geography {
+@media (max-width: 1024px) {
+.geography {
         height: auto;
         flex-direction: column;
         --mapMinHeight: 320px
 }
     }
-
-    .geography__information {
+.geography__information {
         z-index: 1;
         flex: 0 0 var(--informationWidth);
-        box-shadow: var(--informationShadow);
         display: flex;
         flex-direction: column;
         justify-content: center;
+        box-shadow: 3px 0px 15px #b3b3b3;
     }
-
-    .geography__title {
+.geography__title {
         margin-bottom: var(--titleMarginBottom);
     }
-
-    .geography__subtitle {
+.geography__subtitle {
         max-width: var(--subtitleMaxWidth);
         font-weight: var(--subtitleFontWeight);
         font-size: var(--subtitleFontSize);
@@ -1086,32 +1174,56 @@ section {
         color: var(--subtitleColor);
         margin-bottom: var(--subtitleMarginBottom);
     }
-
-    .geography__numb {
+.geography__group {
+        padding-left: 19px;
+        margin-bottom: 13px;
+    }
+.geography__group-title {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1;
+        margin-bottom: 4px;
+        color: var(--c-accent);
+        display: flex;
+        gap: 10px;
+    }
+.geography__group-title > .i-icon {
+            --color: var(--c-accent);
+        }
+.geography__item {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 22px;
+    }
+.geography__numb {
         font-weight: var(--subtitleValueFontWeight);
         font-size: var(--subtitleValueFontSize);
         line-height: var(--subtitleValueLineHeight);
         color: var(--subtitleValueColor);
     }
-
-    .geography__text {
+.geography__actions {
+        margin-top: 20px;
+    }
+.geography__phone {
+        text-decoration: none;
+        color: inherit;
+        border: 0;
+    }
+.geography__text {
         font-weight: var(--textFontWeight);
         font-size: var(--textFontSize);
         line-height: var(--textLineHeight);
         color: var(--textColor);
         margin-bottom: var(--textMarginBottom);
     }
-
-    .geography__map {
+.geography__map {
         flex-basis: 1 1 var(--mapWidth);
         flex-shrink: 1;
         flex-grow: 1;
         min-height: var(--mapMinHeight);
     }
-
-    @media (max-width: 1024px) {
-
-    .geography__map {
+@media (max-width: 1024px) {
+.geography__map {
             height: var(--mapMinHeight)
     }
         }
@@ -1448,6 +1560,7 @@ section {
 
 .newsletter__title {
         margin-bottom: var(--titleMarginBottom) !important;
+        grid-column: span 2;
     }
 
 .newsletter__legend {
@@ -1531,8 +1644,6 @@ section {
 
 
     .service__more .button {
-            --textColor: var(--c-light-2);
-            --iconColor: var(--c-light-2);
             --hoverTextColor: var(--c-accent);
             --hoverIconColor: var(--c-accent);
 
@@ -1807,16 +1918,23 @@ section {
     background-color: var(--c-main);
 }
 
-    .specialists__title{
+    .specialists__title {
         color: var(--c-light);
     }
 
     .specialists__list {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-        grid-gap: 40px;
-        gap: 40px;
+        /* grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); */
+        /* grid-gap: 40px; */
+        grid-gap: 80px;
+        gap: 80px;
         margin-bottom: 50px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .specialists__item {
+        flex: 1 1 320px;
     }
 
     .specialists__more .button {
@@ -2198,7 +2316,7 @@ section {
             padding: 10px 0;
             display: flex;
             gap: 10px;
-            justify-content: flex-end;
+            justify-content: space-evenly;
             align-items: center;
         }
 
@@ -2983,17 +3101,28 @@ section {
 .footer {
 
     --textColor: var(--c-light);
+    color: var(--c-light);
     --transparentTextColor: var(--c-light-2);
     background-color: var(--c-main);
     padding-top: 40px;
 
 }
 
+.footer__left {
+        display: grid;
+        grid-gap: 20px;
+        gap: 20px;
+    }
+
+.footer__left .i-icon {
+            --color: var(--c-light);
+        }
+
 .footer__menu {
         align-items: flex-start;
         padding-bottom: 110px;
         display: grid;
-        grid-template-columns: 340px 1fr 370px;
+        grid-template-columns: 1fr 1fr 300px;
         grid-gap: 20px;
         gap: 20px;
     }
@@ -3009,7 +3138,7 @@ section {
 
 .footer__menu {
             grid-template-columns: repeat(2, auto);
-            grid-template-rows: repeat(2,auto)
+            grid-template-rows: repeat(2, auto)
     }
         }
 
@@ -3026,19 +3155,22 @@ section {
 
 .footer__navigation {
         flex: 1 1 auto;
+        height: 100%;
+        display: flex;
+        align-items: center;
     }
 
 @media (max-width: 1024px) {
 
 .footer__navigation {
-           order: 3;
-           grid-column: span 2
+            order: 3;
+            grid-column: span 2
     }
         }
 
 .footer__social {
         flex: 0 1 auto;
-
+        margin-bottom: 30px;
     }
 
 .footer__information {
@@ -3133,6 +3265,12 @@ section {
         width: 30px;
         height: 30px;
     }
+
+.social__item img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
 
 .social__item + .social__item {
             margin-left: 30px;
@@ -4477,7 +4615,7 @@ figure.snip1197 .author h5 span {
         background: #222;
         transition: 0.5s;
         z-index: 1;
-        bottom: 80px;
+        bottom: 110px;
     }
 
 .card .imgBx img {
@@ -4494,7 +4632,8 @@ figure.snip1197 .author h5 span {
         left: 10px;
         right: 10px;
         bottom: 10px;
-        height: 60px;
+        height: -moz-max-content;
+        height: max-content;
         text-align: center;
     }
 

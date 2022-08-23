@@ -1,18 +1,31 @@
+@import "../media.pcss";
+
 .about {
 
     .container {
         display: flex;
         gap: 100px;
+        @media (--tablet) {
+            flex-direction: column;
+        }
     }
 
     &__left {
         flex: 0 0 70%;
+        @media (--tablet) {
+            flex: 0 0 100%;
+
+        }
     }
 
     &__right {
         flex: 0 0 30%;
         max-width: 30%;
         max-height: 480px;
+        @media (--tablet) {
+            max-width: 100%;
+            flex: 0 0 100%;
+        }
     }
 
     &__img {

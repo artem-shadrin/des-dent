@@ -1,0 +1,47 @@
+@import "../../styles/mixins.pcss";
+
+.select {
+    --offsetTop: 20px;
+    --offsetBottom: 20px;
+    --offsetX: 20px;
+    --transition: .2s ease;
+    --placeholderColor: var(--c-dark);
+    --hoverPlaceholderColor: var(--c-gray);
+    --bgColor: var(--c-gray-3);
+
+    --fieldFontWeight: 400;
+    --fieldFontSize: 14px;
+    --fieldLineHeight: 134%;
+    --fieldColor: var(--c-dark);
+
+    --labelFontWeight: 700;
+    --labelFontSize: 16px;
+    --labelLineHeight: 134%;
+    --labelColor: var(--c-dark);
+    --hoverLabelFontSize: 12px;
+    --hoverLabelColor: var(--c-gray);
+
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+    font-weight: var(--fieldFontWeight);
+    font-size: var(--fieldFontSize);
+    line-height: var(--fieldLineHeight);
+    color: var(--fieldColor);
+
+
+    padding: var(--offsetTop) var(--offsetX) var(--offsetBottom);
+    background-color: var(--bgColor);
+
+
+
+    .select--underlined {
+        --bgColor: transparent;
+        --labelColor: var(--c-main);
+        --hoverLabelColor: var(--c-main);
+        --offsetX: 0;
+        border-bottom: 2px solid var(--labelColor);
+    }
+
+}

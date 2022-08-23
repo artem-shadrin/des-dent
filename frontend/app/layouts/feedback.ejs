@@ -43,6 +43,24 @@
                 </div>
             </div>
         </div>
+        <div class="feedback__review">
+            <div class="feedback__review-content">
+                <h3 class="feedback__review-title">Уважаемые посетители</h3>
+                <p class="feedback__review-description">
+                    Нам важно Ваше мнение. Все добавляемые отзывы читает руководство.<br>
+                    Ваш телефон или email нужны нам, чтобы отреагировать на обращение.
+                </p>
+                <div class="feedback__btn-review">
+                    <%- require("../components/button/template.ejs")({
+                        label: "Оставить отзыв",
+                        extraAttrs: [`data-js-modal-open-button =${JSON.stringify({src: "#modal-review"})} `]
+                    })%>
+                </div>
+            </div>
+            <div class="feedback__review-img">
+                <img src="../images/main/slide_0.jpg" alt=""  loading=lazy>
+            </div>
+        </div>
         <div class="feedback__more button__more">
             <%- require("../components/button/template.ejs")({
                 extraClasses: ["button--transparent"],

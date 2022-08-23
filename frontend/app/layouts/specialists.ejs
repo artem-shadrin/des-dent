@@ -4,13 +4,19 @@
         <span class="specialists__subtitle subtitle"> </span>
         <ul class="specialists__list">
             <li class="specialists__item">
-                <%- require("../components/specialist-card/template.ejs")() %>
+                <%- require("../components/specialist-card/template.ejs")({
+                    id: 1
+                }) %>
             </li>
             <li class="specialists__item">
-                <%- require("../components/specialist-card/template.ejs")() %>
+                <%- require("../components/specialist-card/template.ejs")({
+                    id: 2
+                }) %>
             </li>
             <li class="specialists__item">
-                <%- require("../components/specialist-card/template.ejs")() %>
+                <%- require("../components/specialist-card/template.ejs")({
+                    id: 3
+                }) %>
             </li>
 
         </ul>

@@ -41,6 +41,12 @@ export default class Modals {
     }
 
     Fancybox.show([{src, type: "inline"}], config);
+    if (config.id) {
+      const select = modalElement.querySelector("select");
+      select.disabled = true;
+      select.innerHTML = `<option value="${config.id}" selected>${config.id}</option>`;
+      console.debug(select, config.id);
+    }
   }
 
   handleCloseButtonClick(event) {

@@ -64,9 +64,10 @@ export default class SlidersCollection extends Collection {
           // when window width is >= 640px
           640: {
             slidesPerView: 1,
-            spaceBetween: 40
+            spaceBetween: 40,
+            navigation: false
           },
-          1024: {
+          1280: {
             slidesPerView: 2,
             spaceBetween: 20
           }

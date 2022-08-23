@@ -1,73 +1,210 @@
 <div class="modal modal--feedback" id="modal-feedback" data-js-modal>
-  <header class="modal__header">
-    <div class="modal__title h3">
-      Обратная связь
+    <header class="modal__header">
+        <div class="modal__title h3">
+            Обратная связь
+        </div>
+    </header>
+    <div class="modal__body">
+        <form action="/" class="form-feedback" data-js-form novalidate>
+            <span class="form-feedback__legend">Оставьте Ваши данные, наш специалист свяжется с Вами в ближайшее время.</span>
+            <fieldset class="form-feedback__fieldset">
+                <div class="form-feedback__name">
+                    <%- require("../components/input/template.ejs")({
+                        extraAttrs: [`data-js-input-validate`],
+                        label: "ФИО",
+                        mask: "fullname",
+                        id: "feedback__name",
+                        name: "name"
+                    }); %>
+                </div>
+                <div class="form-feedback__phone">
+                    <%- require("../components/input/template.ejs")({
+                        extraAttrs: [`data-js-input-validate="phone"`],
+                        type: "tel",
+                        mask: "phone",
+                        label: "Телефон",
+                        id: "feedback__phone",
+                        name: "phone"
+                    }); %>
+                </div>
+                <div class="form-feedback__email">
+                    <%- require("../components/input/template.ejs")({
+                        extraAttrs: [`data-js-input-validate="email"`],
+                        type: "email",
+                        mask: "email",
+                        label: "Электронная почта",
+                        id: "feedback__email",
+                        name: "email",
+                        required: false
+                    }); %>
+                </div>
+                <div class="form-feedback__message">
+                    <%- require("../components/input/template.ejs")({
+                        type: "textarea",
+                        label: "Сообщение",
+                        id: "feedback__message",
+                        name: "message",
+                        required: false
+                    }); %>
+                </div>
+            </fieldset>
+            <footer class="form-feedback__footer">
+                <div class="form-feedback__grecaptcha">
+                    <div class="g-recaptcha" data-sitekey="6Lf9y50fAAAAAOhPwphqrtRwEu4VPeWLT5vKjfhU"></div>
+                </div>
+                <div class="form-feedback__privacy">
+                    <%- require("../components/checkbox/template.ejs")({
+                        id: "form-feedback__privacy",
+                        name: "privacy",
+                        id: "form-feedback__privacy",
+                        type: "checkbox",
+                        label: "Согласен (согласна) с политикой конфиденциальности"
+                    }); %>
+                </div>
+                <div class="form-feedback__submit">
+                    <%- require("../components/button/template.ejs")({
+                        icon: "icon-arrow",
+                        label: "Отправить"
+                    }); %>
+                </div>
+            </footer>
+        </form>
     </div>
-  </header>
-  <div class="modal__body">
-    <form action="/" class="form-feedback" data-js-form novalidate>
-      <span class="form-feedback__legend">Оставьте Ваши данные, наш специалист свяжется с Вами в ближайшее время.</span>
-      <fieldset class="form-feedback__fieldset">
-        <div class="form-feedback__name">
-          <%- require("../components/input/template.ejs")({
-            extraAttrs: [`data-js-input-validate`],
-            label: "ФИО",
-            mask: "fullname",
-            id: "feedback__name",
-            name: "name"
-          }) %>
+
+</div>
+
+<div class="modal modal--call" id="modal-call" data-js-modal>
+    <header class="modal__header">
+        <div class="modal__title h3">
+            Заказать звонок
         </div>
-        <div class="form-feedback__phone">
-          <%- require("../components/input/template.ejs")({
-            extraAttrs: [`data-js-input-validate="phone"`],
-            type: "tel",
-            mask: "phone",
-            label: "Телефон",
-            id: "feedback__phone",
-            name: "phone"
-          }) %>
+    </header>
+    <div class="modal__body">
+        <form action="/" class="form-call" data-js-form novalidate>
+            <span class="form-call__legend">Оставьте Ваши данные, наш специалист свяжется с Вами в ближайшее время.</span>
+            <fieldset class="form-call__fieldset">
+                <div class="form-call__name">
+                    <%- require("../components/input/template.ejs")({
+                        extraAttrs: [`data-js-input-validate`],
+                        label: "ФИО",
+                        mask: "fullname",
+                        id: "feedback__name",
+                        name: "name"
+                    }); %>
+                </div>
+                <div class="form-call__phone">
+                    <%- require("../components/input/template.ejs")({
+                        extraAttrs: [`data-js-input-validate="phone"`],
+                        type: "tel",
+                        mask: "phone",
+                        label: "Телефон",
+                        id: "feedback__phone",
+                        name: "phone"
+                    }); %>
+                </div>
+            </fieldset>
+            <footer class="form-call__footer">
+                <div class="form-call__privacy">
+                    <%- require("../components/checkbox/template.ejs")({
+                        id: "form-feedback__privacy",
+                        name: "privacy",
+                        id: "form-feedback__privacy",
+                        type: "checkbox",
+                        label: "Согласен (согласна) с политикой конфиденциальности"
+                    }); %>
+                </div>
+                <div class="form-call__submit">
+                    <%- require("../components/button/template.ejs")({
+                        icon: "icon-arrow",
+                        label: "Отправить"
+                    }); %>
+                </div>
+            </footer>
+        </form>
+    </div>
+
+</div>
+
+
+<div class="modal modal--specialist" id="modal-specialist" data-js-modal>
+    <header class="modal__header">
+        <div class="modal__title h3">
+            Записаться к врачу
         </div>
-        <div class="form-feedback__email">
-          <%- require("../components/input/template.ejs")({
-            extraAttrs: [`data-js-input-validate="email"`],
-            type: "email",
-            mask: "email",
-            label: "Электронная почта",
-            id: "feedback__email",
-            name: "email"
-          }) %>
-        </div>
-        <div class="form-feedback__message">
-          <%- require("../components/input/template.ejs")({
-            type: "textarea",
-            label: "Сообщение",
-            id: "feedback__message",
-            name: "message",
-            required: false
-          }) %>
-        </div>
-      </fieldset>
-      <footer class="form-feedback__footer">
-        <div class="form-feedback__grecaptcha">
-          <div class="g-recaptcha" data-sitekey="6Lf9y50fAAAAAOhPwphqrtRwEu4VPeWLT5vKjfhU"></div>
-        </div>
-        <div class="form-feedback__privacy">
-          <%- require("../components/checkbox/template.ejs")({
-            id: "form-feedback__privacy",
-            name: "privacy",
-            id: "form-feedback__privacy",
-            type: "checkbox",
-            label: "Согласен (согласна) с политикой конфиденциальности"
-          }) %>
-        </div>
-        <div class="form-feedback__submit">
-          <%- require("../components/button/template.ejs")({
-            icon: "icon-arrow",
-            label: "Отправить"
-          }) %>
-        </div>
-      </footer>
-    </form>
-  </div>
+    </header>
+    <div class="modal__body">
+        <form action="/" class="form-feedback" data-js-form novalidate>
+            <span class="form-feedback__legend">Оставьте Ваши данные, наш специалист свяжется с Вами в ближайшее время.</span>
+            <fieldset class="form-feedback__fieldset">
+                <div class="form-feedback__name">
+                    <%- require("../components/input/template.ejs")({
+                        extraAttrs: [`data-js-input-validate`],
+                        label: "ФИО",
+                        mask: "fullname",
+                        id: "feedback__name",
+                        name: "name"
+                    }); %>
+                </div>
+                <div class="form-feedback__phone">
+                    <%- require("../components/input/template.ejs")({
+                        extraAttrs: [`data-js-input-validate="phone"`],
+                        type: "tel",
+                        mask: "phone",
+                        label: "Телефон",
+                        id: "feedback__phone",
+                        name: "phone"
+                    }); %>
+                </div>
+                <div class="form-feedback__email">
+                    <%- require("../components/input/template.ejs")({
+                        extraAttrs: [`data-js-input-validate="email"`],
+                        type: "email",
+                        mask: "email",
+                        label: "Электронная почта",
+                        id: "feedback__email",
+                        name: "email"
+                    }); %>
+                </div>
+                <div class="form-feedback__right">
+                    <div class="form-feedback__specialist">
+                        <select class="select" name="specialist" id="specialist">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </div>
+                    <div class="form-feedback__message">
+                        <%- require("../components/input/template.ejs")({
+                            type: "textarea",
+                            label: "Сообщение",
+                            id: "feedback__message",
+                            name: "message",
+                            required: false
+                        }); %>
+                    </div>
+                </div>
+            </fieldset>
+            <footer class="form-feedback__footer">
+                <div class="form-feedback__grecaptcha">
+                    <div class="g-recaptcha" data-sitekey="6Lf9y50fAAAAAOhPwphqrtRwEu4VPeWLT5vKjfhU"></div>
+                </div>
+                <div class="form-feedback__privacy">
+                    <%- require("../components/checkbox/template.ejs")({
+                        id: "form-feedback__privacy",
+                        name: "privacy",
+                        id: "form-feedback__privacy",
+                        type: "checkbox",
+                        label: "Согласен (согласна) с политикой конфиденциальности"
+                    }); %>
+                </div>
+                <div class="form-feedback__submit">
+                    <%- require("../components/button/template.ejs")({
+                        icon: "icon-arrow",
+                        label: "Отправить"
+                    }); %>
+                </div>
+            </footer>
+        </form>
+    </div>
 
 </div>
