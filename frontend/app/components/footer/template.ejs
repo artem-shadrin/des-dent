@@ -83,12 +83,18 @@ const attrs = extraAttrs.join(" ");
                 </div>
                 <div class="footer__btn-record">
                     <%- require("../button/template.ejs")({
-                        label: "Записаться к врачу"
+                        label: "Записаться к врачу",
+                        extraAttrs: [`data-js-modal-open-button = ${JSON.stringify({
+                            src: "#modal-specialist"
+                        })}`]
                     }) %>
                 </div>
                 <div class="footer__btn-question">
                     <%- require("../button/template.ejs")({
-                        label: "Задать вопрос"
+                        label: "Задать вопрос",
+                        extraAttrs: [`data-js-modal-open-button = ${JSON.stringify({
+                            src: "#modal-feedback"
+                        })}`],
                     }) %>
                 </div>
             </div>

@@ -47,6 +47,9 @@
         <div class="geography__actions">
             <div class="geography__group">
                 <%- require("../components/button/template.ejs")({
+                    extraAttrs: [`data-js-modal-open-button = ${JSON.stringify({
+                        src: "#modal-call"
+                    })}`],
                     icon: "icon-arrow",
                     label: "Заказать звонок"
                 }); %>

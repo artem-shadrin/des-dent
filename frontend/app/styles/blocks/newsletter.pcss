@@ -73,10 +73,20 @@
 
 
     position: relative;
+    display: grid;
+    position: relative;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 60px;
 
     &__email {
-        margin-bottom: 30px;
         text-transform: uppercase;
+    }
+
+    &__date {
+        .input {
+            padding-right: 40px !important;
+        }
     }
 
     &__submit {

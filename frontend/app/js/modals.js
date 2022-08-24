@@ -47,6 +47,12 @@ export default class Modals {
       select.innerHTML = `<option value="${config.id}" selected>${config.id}</option>`;
       console.debug(select, config.id);
     }
+
+    if (config.id_service) {
+      const select = modalElement.querySelector("#service-id");
+      select.value = config.id_service;
+      console.debug(select, config.id);
+    }
   }
 
   handleCloseButtonClick(event) {

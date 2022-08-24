@@ -1,86 +1,103 @@
 <%
-const cfg = {...require("./data.json"), ...arguments?.[0]}
+const cfg = {...require("./data.json"), ...arguments?.[0]};
 const {
-  extraClasses,
-  extraAttrs,
-  label,
-  labelIsHidden,
-  value,
-  type,
-  required,
-  autocomplete,
-  readOnly,
-  transparent,
-  id,
-  mask,
-  name
-} = cfg
+    extraClasses,
+    extraAttrs,
+    label,
+    labelIsHidden,
+    value,
+    type,
+    required,
+    autocomplete,
+    readOnly,
+    transparent,
+    id,
+    mask,
+    name,
+    hidden,
+    disabled
+} = cfg;
 %>
 <%
-let additionalClass = transparent ? 'input--transparent' : '';
+let additionalClass = transparent ? "input--transparent" : "";
 additionalClass += labelIsHidden ? " input--value-only" : "";
-const classes = `input ${extraClasses.join(" ")} ${additionalClass}`.trim()
-const attrs = extraAttrs.join(" ")
+const classes = `input ${extraClasses.join(" ")} ${additionalClass}`.trim();
+const attrs = extraAttrs.join(" ");
 %>
 
 <div
-  class="<%= classes %>"
-  <%- attrs %>
+        class="<%= classes; %>"
+        <%- attrs; %>
 >
-  <% if(type === "textarea"){ %>
-    <textarea
-      class="input__field"
-      <% if(value) { %>
-      value=<%- value %>
-      <% } %>
-      id="<%- id %>"
-      name="<%- name %>"
-    <% if(required) { %>
-      required
-      <% } %>
-    <% if(autocomplete) { %>
-      autocomplete
-      <% } %>
-    <% if(readOnly) { %>
-      readonly
-      <% } %>
-    <% if(!labelIsHidden) { %>
-      placeholder=" "
-      <% } %>
-    ></textarea>
+    <% if(type === "textarea"){ %>
+        <textarea
+                class="input__field"
+                <% if(value) { %>
+                value=<%- value; %>
+                <% } %>
+                id="<%- id; %>"
+                name="<%- name; %>"
+        <% if(required) { %>
+                required
+                <% } %>
+        <% if(autocomplete) { %>
+                autocomplete
+                <% } %>
+        <% if(readOnly) { %>
+                readonly
+                <% } %>
+        <% if(!labelIsHidden) { %>
+                placeholder=" "
+                <% } %>
+        <% if(hidden) { %>
+                hidden
+                <% } %>
+        <% if(disabled) { %>
+                disabled
+                <% } %>
+        ></textarea>
 
-  <% } else { %>
-    <input
-      type="<%= type %>"
-      class="input__field"
-    <% if(value) { %>
-      value=<%- value %>>
+    <% } else { %>
+        <input
+                type="<%= type; %>"
+                class="input__field"
+        <% if(value) { %>
+                value=<%- value; %>>
+        <% } %>
+        <% if(mask) { %>
+            data-mask=<%- mask; %>
+        <% } %>
+        id="<%- id; %>"
+        name="<%- name; %>"
+        <% if(required) { %>
+            required
+        <% } %>
+        <% if(hidden) { %>
+            hidden
+        <% } %>
+        <% if(disabled) { %>
+            disabled
+        <% } %>
+        <% if(autocomplete) { %>
+            autocomplete
+        <% } %>
+        <% if(readOnly) { %>
+            readonly
+        <% } %>
+        <% if(!labelIsHidden) { %>
+            placeholder= " "
+        <% } %>
+        >
     <% } %>
-    <% if(mask) { %>
-      data-mask=<%- mask %>
-    <% } %>
-    id="<%- id %>"
-    name="<%- name %>"
-    <% if(required) { %>
-      required
-    <% } %>
-    <% if(autocomplete) { %>
-      autocomplete
-    <% } %>
-    <% if(readOnly) { %>
-      readonly
-    <% } %>
-    <% if(!labelIsHidden) { %>
-      placeholder= " "
-    <% } %>
-    >
-  <% } %>
-  <label class="input__label"
-         for="<%- id %>"
-  >
-    <%- label %>
-    <% if(required) { %>
-      *
-    <% } %>
-  </label>
+
+        <% if(!hidden && !disabled) { %>
+            <label class="input__label"
+                   for="<%- id; %>"
+            >
+                <%- label; %>
+                <% if(required) { %>
+                    *
+                <% } %>
+            </label>
+        <% } %>
 </div>

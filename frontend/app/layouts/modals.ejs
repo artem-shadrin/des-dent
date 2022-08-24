@@ -173,13 +173,12 @@
                             <option value="3">3</option>
                         </select>
                     </div>
-                    <div class="form-feedback__message">
+                    <div class="form-feedback__date">
                         <%- require("../components/input/template.ejs")({
-                            type: "textarea",
-                            label: "Сообщение",
-                            id: "feedback__message",
-                            name: "message",
-                            required: false
+                            label: "Дата приема",
+                            name: "date",
+                            type: "date",
+                            id: "form-newsletter__date",
                         }); %>
                     </div>
                 </div>
@@ -198,6 +197,70 @@
                     }); %>
                 </div>
                 <div class="form-feedback__submit">
+                    <%- require("../components/button/template.ejs")({
+                        icon: "icon-arrow",
+                        label: "Отправить"
+                    }); %>
+                </div>
+            </footer>
+        </form>
+    </div>
+
+</div>
+
+<div class="modal modal--call" id="modal-service" data-js-modal>
+    <header class="modal__header">
+        <div class="modal__title h3">
+            Заказать звонок
+        </div>
+    </header>
+    <div class="modal__body">
+        <form action="/" class="form-call" data-js-form novalidate>
+            <span class="form-call__legend">Оставьте Ваши данные, наш специалист свяжется с Вами в ближайшее время.</span>
+            <fieldset class="form-call__fieldset">
+                <div class="form-call__name">
+                    <%- require("../components/input/template.ejs")({
+                        extraAttrs: [`data-js-input-validate`],
+                        label: "ФИО",
+                        mask: "fullname",
+                        id: "feedback__name",
+                        name: "name"
+                    }); %>
+                </div>
+                <div class="form-call__phone">
+                    <%- require("../components/input/template.ejs")({
+                        extraAttrs: [`data-js-input-validate="phone"`],
+                        type: "tel",
+                        mask: "phone",
+                        label: "Телефон",
+                        id: "feedback__phone",
+                        name: "phone"
+                    }); %>
+                </div>
+                <div class="form-feedback__right">
+                    <div class="form-feedback__service">
+                        <%- require("../components/input/template.ejs")({
+                            label: "Услуга",
+                            id: "service-id",
+                            required: false,
+                            name: "service",
+                            hidden: true,
+                            disabled: true
+                        }); %>
+                    </div>
+                </div>
+            </fieldset>
+            <footer class="form-call__footer">
+                <div class="form-call__privacy">
+                    <%- require("../components/checkbox/template.ejs")({
+                        id: "form-feedback__privacy",
+                        name: "privacy",
+                        id: "form-feedback__privacy",
+                        type: "checkbox",
+                        label: "Согласен (согласна) с политикой конфиденциальности"
+                    }); %>
+                </div>
+                <div class="form-call__submit">
                     <%- require("../components/button/template.ejs")({
                         icon: "icon-arrow",
                         label: "Отправить"

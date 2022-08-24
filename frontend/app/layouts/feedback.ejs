@@ -53,7 +53,9 @@
                 <div class="feedback__btn-review">
                     <%- require("../components/button/template.ejs")({
                         label: "Оставить отзыв",
-                        extraAttrs: [`data-js-modal-open-button =${JSON.stringify({src: "#modal-review"})} `]
+                        extraAttrs: [`data-js-modal-open-button = ${JSON.stringify({
+                            src: "#modal-feedback"
+                        })}`],
                     })%>
                 </div>
             </div>
