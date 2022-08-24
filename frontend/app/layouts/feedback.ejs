@@ -53,12 +53,14 @@
                 <div class="feedback__btn-review">
                     <%- require("../components/button/template.ejs")({
                         label: "Оставить отзыв",
-                        extraAttrs: [`data-js-modal-open-button =${JSON.stringify({src: "#modal-review"})} `]
-                    })%>
+                        extraAttrs: [`data-js-modal-open-button = ${JSON.stringify({
+                            src: "#modal-feedback"
+                        })}`],
+                    }); %>
                 </div>
             </div>
             <div class="feedback__review-img">
-                <img src="../images/main/slide_0.jpg" alt=""  loading=lazy>
+                <img src="../images/main/slide_0.jpg" alt="" loading=lazy>
             </div>
         </div>
         <div class="feedback__more button__more">
@@ -69,6 +71,5 @@
                 iconPosition: "right"
             }); %>
         </div>
-
     </div>
 </section>

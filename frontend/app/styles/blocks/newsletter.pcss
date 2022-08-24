@@ -17,21 +17,18 @@
     --legendColor: var(--c-dark);
     --formMarginBottom: 30px;
 
-    padding-block: 200px;
     background-color: var(--c-main);
 
     &__content {
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 95%;
-        position: absolute;
         display: grid;
         grid-template-columns: var(--gridColumns);
         grid-template-rows: var(--gridRows);
         align-items: baseline;
         background-color: var(--contentBgColor);
-        padding-block: var(--contentPaddingY);
-        padding-inline: var(--contentPaddingX);
+        padding-top: var(--contentPaddingY);
+        padding-bottom: var(--contentPaddingY);
+        padding-left: var(--contentPaddingX);
+        padding-right: var(--contentPaddingX);
 
     }
 
@@ -52,6 +49,7 @@
         margin-top: var(--formMarginTop);
         margin-bottom: var(--formMarginBottom);
         grid-column: var(--formGridColumn);
+
     }
 
     @media (--tablet) {
@@ -73,18 +71,33 @@
 
 
     position: relative;
+    display: grid;
+    position: relative;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 60px;
+    @media (--mobile) {
+        grid-auto-flow: column;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+    }
 
     &__email {
-        margin-bottom: 30px;
         text-transform: uppercase;
+    }
+
+    &__date {
+        .input {
+            padding-right: 40px !important;
+        }
     }
 
     &__submit {
         position: absolute;
-        top: 0;
+        bottom: 10px;
         right: 0;
         @media (--mobile) {
-            top: 15px;
+            bottom: -30px;
             span {
                 display: none;
             }

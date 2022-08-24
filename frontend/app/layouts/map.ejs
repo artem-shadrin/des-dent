@@ -47,7 +47,9 @@
         <div class="geography__actions">
             <div class="geography__group">
                 <%- require("../components/button/template.ejs")({
-                    icon: "icon-arrow",
+                    extraAttrs: [`data-js-modal-open-button = ${JSON.stringify({
+                        src: "#modal-call"
+                    })}`],
                     label: "Заказать звонок"
                 }); %>
             </div>
@@ -56,7 +58,6 @@
                     extraAttrs: [`data-js-modal-open-button = ${JSON.stringify({
                         src: "#modal-specialist"
                     })}`],
-                    icon: "icon-arrow",
                     label: "Записаться на прием"
                 }); %>
             </div>

@@ -5,6 +5,24 @@
             </h2>
             <div class="newsletter__form">
                 <form action="/" class="form-newsletter" data-js-form novalidate>
+                    <div class="form-newsletter__name">
+                        <%- require("../components/input/template.ejs")({
+                            extraClasses: ["input--underlined"],
+                            label: "ФИО",
+                            name: "name",
+                            id: "form-newsletter__name",
+                            mask: "text"
+                        }); %>
+                    </div>
+                    <div class="form-newsletter__date">
+                        <%- require("../components/input/template.ejs")({
+                            extraClasses: ["input--underlined"],
+                            label: "Дата приема",
+                            name: "date",
+                            type: "date",
+                            id: "form-newsletter__date",
+                        }); %>
+                    </div>
                     <div class="form-newsletter__email">
                         <%- require("../components/input/template.ejs")({
                             extraClasses: ["input--underlined"],

@@ -3,5 +3,6 @@
   "extraAttrs": [],
   "icon": "",
   "caption": "Услуга",
-  "description": "Описание услуги"
+  "description": "Описание услуги",
+  "id_service": null
 }

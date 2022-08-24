@@ -1,0 +1,46 @@
+@import "../media.pcss";
+
+
+/*.parallax {
+    height: max-content;
+    background-attachment: fixed;
+    position: relative;
+
+
+}
+
+.parallax__mask {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-image: url("../../images/main/slide_0.jpg");
+    z-index: 2;
+}
+
+.parallax__content {
+    z-index: 3;
+    position: relative;
+}*/
+
+.parallax {
+    perspective: 1px;
+    height: 100vh;
+    overflow-y: auto;
+}
+.parallax__layer {
+    position: absolute;
+    inset: 0;
+}
+.parallax-image {
+    transform: translateZ(0);
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.parallax-content {
+    transform: translateZ(-2px) scale(3);
+}

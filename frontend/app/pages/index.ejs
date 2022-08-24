@@ -1,17 +1,15 @@
 <% const data = {
-    title: 'Дизайн Дент',
+    title: "Дизайн Дент",
     activeElement: 0
-} %>
+}; %>
+<%- require("../layouts/head.ejs")(data); %>
+<%- require("../layouts/main.ejs")(); %>
 
-<%- require("../layouts/head.ejs")(data) %>
+        <%- require("../layouts/about.ejs")(); %>
 
-<%- require("../layouts/main.ejs")()%>
-<%- require("../layouts/about.ejs")()%>
-<%- require("../layouts/service.ejs")()%>
-<%- require("../layouts/newsletter.ejs")()%>
-<%- require("../layouts/feedback.ejs")()%>
-<%- require("../layouts/specialists.ejs")()%>
-<%- require("../layouts/map.ejs")()%>
-
-
-<%- require("../layouts/foot.ejs")() %>
+<%- require("../layouts/service.ejs")(); %>
+<%- require("../layouts/newsletter.ejs")(); %>
+<%- require("../layouts/feedback.ejs")(); %>
+<%- require("../layouts/specialists.ejs")(); %>
+<%- require("../layouts/map.ejs")(); %>
+<%- require("../layouts/foot.ejs")(); %>

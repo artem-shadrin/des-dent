@@ -2,20 +2,22 @@
 @import "../../styles/media.pcss";
 
 .feedback-card {
-    margin: 40px;
     margin-bottom: 60px;
+    @media (--tablet-xxs) {
+        margin-bottom: 0;
+    }
 }
 
 figure.snip1197 {
     position: relative;
-    min-width: 360px;
+    min-width: 320px;
     width: 100%;
     text-align: left;
     box-shadow: 0 0 5px rgb(0 0 0 / 15%);
     display: flex;
-    margin-bottom: 40px;
     @media (--tablet-xxs) {
         flex-direction: column-reverse;
+
     }
 }
 
@@ -24,7 +26,8 @@ figure.snip1197 img {
     max-width: 40%;
     vertical-align: middle;
     @media (--tablet-xxs) {
-        max-width: 80%;
+        max-width: 100%;
+        width: 100%;
     }
 }
 
@@ -33,22 +36,22 @@ figure.snip1197 figcaption {
     position: relative;
     background-color: #ffffff;
     @media (--tablet-xxs) {
-        width: 80%;
+        width: 100%;
     }
 }
 
 figure.snip1197 blockquote {
     position: relative;
-    padding: 25px 50px 25px 50px;
+    padding: 15px;
     font-size: 0.8em;
     font-weight: 500;
     text-align: left;
     margin: 0;
     line-height: 1.6em;
     font-style: italic;
+    @mixin line-clamp 11;
     @media (--desktop-s) {
-        padding: 15px 25px 15px 25px;
-
+        padding: 10px ;
     }
 }
 
@@ -91,6 +94,11 @@ figure.snip1197 .author {
     color: #ffffff;
     margin: 0;
     text-transform: uppercase;
+    @media (--tablet-xxs) {
+        position: static;
+        width: 100%;
+
+    }
 }
 
 figure.snip1197 .author h5 {

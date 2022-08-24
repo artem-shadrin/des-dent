@@ -5,7 +5,8 @@ const {
     extraAttrs,
     icon,
     caption,
-    description
+    description,
+    id_service
 } = cfg;
 %>
 <%
@@ -27,7 +28,7 @@ const attrs = extraAttrs.join(" ");
     <div class="service-card__btn-call">
         <%- require("../button/template.ejs")({
             extraClasses: ["button--transparent"],
-            extraAttrs: [`data-js-modal-open-button = '{"src": "#modal-call"}'`],
+            extraAttrs: [`data-js-modal-open-button = ${JSON.stringify({src: "#modal-service", id_service: id_service})}`],
             label: "Заказать звонок"
         }) %>
     </div>

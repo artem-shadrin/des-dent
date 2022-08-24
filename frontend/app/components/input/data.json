@@ -10,5 +10,7 @@
   "required": true,
   "autocomplete": false,
   "readOnly": false,
-  "mask": null
+  "mask": null,
+  "hidden": false,
+  "disabled": false
 }

@@ -2,48 +2,43 @@
 @import "../mixins.pcss";
 
 .geography {
-    padding-block: 0;
+    padding-top: 0;
+    padding-bottom:0;
     --informationWidth: 426px;
     --informationPaddingTop: 160px;
     --informationPaddingRight: 40px;
     --informationPaddingBottom: 240px;
     --informationPaddingLeft: var(--grid-padding);
     --informationShadow: var(--shadow-2);
-
     --mapWidth: calc(100% - var(--informationWidth));
     --mapMinHeight: 480px;
-
     --titleMarginBottom: 40px;
-
     --subtitleValueFontWeight: 600;
     --subtitleValueFontSize: 64px;
     --subtitleValueLineHeight: 1.09;
     --subtitleValueColor: var(--c-main);
-
     --subtitleFontWeight: 700;
     --subtitleFontSize: 22px;
     --subtitleLineHeight: 1.45;
     --subtitleColor: var(--c-main);
     --subtitleMarginBottom: 30px;
     --subtitleMaxWidth: 288px;
-
     --textFontWeight: 400;
     --textFontSize: 16px;
     --textLineHeight: 1.375;
     --textColor: var(--c-dark);
     --textMarginBottom: 40px;
-
-
     display: flex;
-    overflow: hidden;
+    /* overflow: hidden; */
     height: 100vh;
+    background-color: var(--c-main);
 
     @media (--tablet-s) {
+        padding-bottom: 0;
         height: auto;
         flex-direction: column;
         --mapMinHeight: 320px;
     }
-
     &__information {
         z-index: 1;
         flex: 0 0 var(--informationWidth);
@@ -51,6 +46,15 @@
         flex-direction: column;
         justify-content: center;
         box-shadow: 3px 0px 15px #b3b3b3;
+        padding: 20px;
+        position: relative;
+        top: 50px;
+        left: 40px;
+        background-color: var(--c-light);
+        @media (--tablet-s) {
+            top: 0;
+            left: 0;
+        }
     }
 
     &__title {
@@ -67,8 +71,7 @@
     }
 
     &__group {
-        padding-left: 19px;
-        margin-bottom: 13px;
+    //padding-left: 19px; margin-bottom: 13px;
     }
 
     &__group-title {

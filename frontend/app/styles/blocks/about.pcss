@@ -11,7 +11,7 @@
     }
 
     &__left {
-        flex: 0 0 70%;
+        flex: 0 0 60%;
         @media (--tablet) {
             flex: 0 0 100%;
 
@@ -20,12 +20,16 @@
 
     &__right {
         flex: 0 0 30%;
-        max-width: 30%;
+        max-width: 40%;
         max-height: 480px;
         @media (--tablet) {
             max-width: 100%;
             flex: 0 0 100%;
         }
+    }
+
+    .swiper-button-next, .swiper-button-prev {
+        --swiper-navigation-size: 30px;
     }
 
     &__img {
@@ -35,6 +39,11 @@
         justify-content: center;
         align-items: center;
         margin: 0 auto;
+
+        a {
+            display: inline-block;
+            height: 100%;
+        }
 
         img {
             width: 100%;
